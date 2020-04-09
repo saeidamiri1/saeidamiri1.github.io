@@ -1,0 +1,50 @@
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>{{ site.description }}</p>
+  </div>
+<div class="contact-buttons" style="line-height:160%;margin-left:30px;margin-top:10px">
+<p>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//saeidamiri1.github.io/css/academicons.css">
+  <a href="mailto:saeid.amiri1@gmail.com" target="_blank" style="color:#855f65;"><i class="fa fa-envelope" style="font-size:1em"></i> &nbsp </a>
+<a href="https://github.com/saeidamiri1" target="_blank" style="color:#855f65;"><i class="fa fa-github" aria-hidden="true"></i> &nbsp </a>
+<a href="https://www.researchgate.net/profile/Saeid_Amiri6" target="_blank" style="color:#855f65;"><i class="ai ai-researchgate ai-3x" style="font-size:1em"></i> &nbsp <br></a> 
+<a href="https://scholar.google.com/citations?user=iroPmuAAAAAJ&hl=en" target="_blank" style="color:#855f65;"><i class="ai ai-google-scholar-square ai-3x" style="font-size:1em"></i> &nbsp </a>
+<a href="https://www.linkedin.com/in/saeid-amiri-191730139/" target="_blank" style="color:#855f65;"><i class="fa fa-linkedin" style="font-size:1em"></i> &nbsp</a>
+</p>
+</div>
+     
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item{% if page.title == "Home" %} active{% endif %}" href="/">Home</a>
+
+    {% comment %}
+      The code below dynamically generates a sidebar nav of pages with
+      `layout: page` in the front-matter. See readme for usage.
+    {% endcomment %}
+
+    {% assign pages_list = site.pages %}
+    {% for node in pages_list %}
+      {% if node.title != null %}
+        {% if node.layout == "page" %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/papers/">Papers</a>
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/software/">Software</a>
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/courses/">Courses</a>
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/Misc">Misc</a>
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/blog">Blog</a>
+               <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/CV">CV</a>
+        <a class="sidebar-nav-item" href="https://github.com/saeidamiri1">GitHub</a>
+               <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/tags">Tags</a>
+
+  </nav>
+
+  <div class="sidebar-item">
+  </div>
+</div>

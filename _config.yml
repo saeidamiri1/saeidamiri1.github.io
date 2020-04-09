@@ -1,0 +1,32 @@
+# Dependencies
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+gems: ["jekyll-paginate", "jekyll-gist"]
+
+exclude: ["README.md", "Rakefile", "Gemfile", "Gemfile.lock"]
+highligher: rouge
+paginate: 5
+paginate_path: "page:num"
+
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Saeid Amiri
+tagline:          ''
+description:      ''
+url:              http://saeidamiri1.github.io
+
+
+github_username:  saeidamiri1
+permalink: /:year/:month/:title.html
+excerpt_separator: <!--more-->
+
+
+
+
+theme: jekyll-theme-cayman

@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}{% if page.comments %} • <a href="https://saeidamiri1.github.io{{ page.url }}#disqus_thread">0 Comments</a>{% endif %}</p>
+    {% include mathjax.html %}
+  
+  </header>
+
+ <div class="post-content" itemprop="articleBody">
+    {{ content }}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  
+  <script type="text/javascript" async
+    src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  </div>
+
+</article>
+
+{% assign dep_file = page.url | split: '/' | last | prepend : 'htmlwidgets/' %}
+
+{% include disqus.html %}
