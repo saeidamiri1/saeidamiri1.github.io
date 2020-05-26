@@ -25,7 +25,7 @@ The source of codes are stored in Github.
 > library(MASS)
 > library(boot)
 ### Read codes from github
-> script <- getURL("https://raw.githubusercontent.com/saeidamiri1/generalcodes/master/bootcat.R", ssl.verifypeer = FALSE)
+> script <- getURL("https://raw.githubusercontent.com/saeidamiri1/saeidamiri1.github.io/codes/bootcat/master/bootcat.R", ssl.verifypeer = FALSE)
 > eval(parse(text = script))
 ########
 
