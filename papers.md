@@ -9,7 +9,8 @@ permalink: papers/
 <a href="https://scholar.google.com/citations?user=iroPmuAAAAAJ&hl=en">Google Scholar</a>
 <br />
 <a href="https://www.researchgate.net/profile/Saeid_Amiri6">  ResearchGate</a>
-
+<br />
+<a href="https://github.com/saeidamiri1">  GitHub</a>
 
 
 ## Submitted\Ongoing articles
@@ -42,7 +43,7 @@ Amiri, S. (2020). ESRL: Ensemble SVD-regularized learning to achieve clustering
 </p>
 
 <p>
-Saeid Amiri, James-A. Goulet, Catherine Morency and Nicolas Saunier. (2020).
+Amiri, S., Goulet, JA.,  Morency, C.,  and Saunier, N. (2020).
 Modeling Transportation Time Series using Bayesian Dynamic Linear Model
 <em> .</em>
 (<a href=""> pdf</a>,  
