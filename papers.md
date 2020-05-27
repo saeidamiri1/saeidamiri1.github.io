@@ -11,6 +11,77 @@ permalink: papers/
 <a href="https://www.researchgate.net/profile/Saeid_Amiri6">  ResearchGate</a>
 
 
+
+## Submitted\Ongoing articles
+<ul>
+<p>
+Amiri, S. (2020). How Aggregating improves the Classification’s accuracy.
+<em>  .</em>
+(<a href=""> pdf</a>,  
+<a href="">  Journal</a>,
+<a href=""> Wiki</a> 
+)
+</p>
+<p>
+Amiri, S. (2020).
+Meta inference of Heterogeneous Data Streams.
+<em>  .</em>
+(<a href=""> pdf</a>,  
+<a href="">  Journal</a>,
+<a href=""> Wiki</a> 
+)
+</p>
+
+<p>
+Amiri, S. (2020). ESRL: Ensemble SVD-regularized learning to achieve clustering 
+<em>  .</em>
+(<a href=""> pdf</a>,  
+<a href="">  Journal</a>,
+<a href=""> Wiki</a> 
+)
+</p>
+
+<p>
+Saeid Amiri, James-A. Goulet, Catherine Morency and Nicolas Saunier. (2020).
+Modeling Transportation Time Series using Bayesian Dynamic Linear Model
+<em> .</em>
+(<a href=""> pdf</a>,  
+<a href="">  Journal</a>,
+<a href=""> Wiki</a> 
+)
+</p>
+
+<p>
+Amiri, S. (2020). Dissimilarity of time series using Discretized time series global Alignment; with application of transportation data
+<em>  .</em>
+(<a href=""> pdf</a>,  
+<a href="">  Journal</a>,
+<a href=""> Wiki</a> 
+)
+</p>
+
+<p>
+Goulet JA, Nguyen LH, Amiri S. (2020). Tractable Approximate Gaussian Inference for Bayesian Neural Networks.  <em> arXiv preprint arXiv:2004.09281. <em>
+<em>
+</em>
+(<a href=""> pdf</a>,  
+<a href="">  Journal</a>
+)
+</p>
+
+<p>
+Amiri, S., Hassani, H., Heravi, S., & Morgan, P. (2020). Ranked Set Sampling with Probability Proportional to Size with Application to Economic Data. 
+<em>
+</em>
+(<a href=""> pdf</a>,  
+<a href="">  Journal</a>
+)
+</p>
+
+
+</ul>
+
+
 ## Published
 <ul>
 <p>
@@ -186,41 +257,6 @@ REVSTAT–Statistical Journal, 7(1), 23-36.
 </p>
 </ul>
 
-## Submitted\Ongoing articles
-<ul>
-<p>
-Amiri, S. (2017). Rbox: An integrated Atom packages for R.
-(<a href="https://arxiv.org/pdf/1709.06849.pdf"> pdf</a>,  
-<a href="https://atom.io/packages/rbox">  link</a>,
-<a href="https://github.com/saeidamiri1/rbox"> GitHub</a>, 
-<a href="https://github.com/saeidamiri1/rbox/wiki"> wiki</a> 
-)
-</p>
-<p>
-Amiri, S., Hassani, H., Heravi, S., & Morgan, P. (2018). Ranked Set Sampling with Probability Proportional to Size with Application to Economic Data. 
-<em>
-Under Revision 
-</em>
-(<a href=""> pdf</a>,  
-<a href="">  Journal</a>
-)
-</p>
-
-
-<!-- 
-<p>
-Amiri, S.& Dinov, I. (2017). Influential SNPs via Statistical Approach in Genome Wide Association Study of Parkinson's Disease.
-<em>
-Submitted.</em>
-(<a href=""> pdf</a>,  
-<a href="">  Journal</a>,
-<a href="https://github.com/saeidamiri1/mlgwsa/wiki"> supplementary</a> 
-)
-</p>
--->
-
-</ul>
-
 ## Applications
 <ul>
 <p>
@@ -234,7 +270,7 @@ Euphytica, 186(2), 489-500.</em>
 ## Chapter
 <ul>
 <p>
-Amiri, S., & Modaress, R. (2018). Statistical Inference of Ranked Set Sampling Via Resampling Methods.
+Amiri, S., & Modaress, R. (2019). Statistical Inference of Ranked Set Sampling Via Resampling Methods.
 <em>
 59-70.</em>
 (<a href="https://github.com/saeidamiri1/saeidamiri1.github.io/blob/master/public/published/a2008rsstest.PDF"> pdf</a>,<a href="https://www.elsevier.com/books/ranked-set-sampling/bouza-herrera/978-0-12-815044-3">Journal</a>)
@@ -244,6 +280,14 @@ Amiri, S., & Modaress, R. (2018). Statistical Inference of Ranked Set Sampling V
 
 ## Miscellaneous
 <ul>
+<p>
+Amiri, S. (2017). Rbox: An integrated Atom packages for R.
+(<a href="https://arxiv.org/pdf/1709.06849.pdf"> pdf</a>,  
+<a href="https://atom.io/packages/rbox">  link</a>,
+<a href="https://github.com/saeidamiri1/rbox"> GitHub</a>, 
+<a href="https://github.com/saeidamiri1/rbox/wiki"> wiki</a> 
+)
+</p>
 <p>
 A statistical study of similarities and dissimilarities in yield district used in swedish variety trials (2009). (with J. Forkman and D. von Rosen). [pdf]
 </p>
