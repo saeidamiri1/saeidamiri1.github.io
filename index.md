@@ -19,7 +19,6 @@ If you are interested in collaborating and doing some great work, please reach o
 <a href="https://github.com/saeidamiri1" target="_blank" style="color:#0e5295;"><i class="fa fa-github" aria-hidden="true"></i> &nbsp; GitHub<br></a>
 <a href="https://www.researchgate.net/profile/Saeid_Amiri6" target="_blank" style="color:#5f09091;"><i class="ai ai-researchgate ai-3x" style="font-size:1em"></i> &nbsp; ResearchGate<br></a> 
 <a href="https://scholar.google.com/citations?user=iroPmuAAAAAJ&hl=en" target="_blank" style="color:#ea1b1b;"><i class="ai ai-google-scholar-square ai-3x" style="font-size:1em"></i> &nbsp; GoogleScholar <br></a>
-<a href="https://www.linkedin.com/in/saeid-amiri-191730139/" target="_blank" style="color:#363636;"><i class="fa fa-linkedin" style="font-size:1em"></i> &nbsp; LinkedIn<br></a>
 </p>
 </div>
 
