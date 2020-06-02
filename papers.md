@@ -32,7 +32,7 @@ Modeling Transportation Time Series using Bayesian Dynamic Linear Model.
 Amiri, S. (2020). Dissimilarity of time series using Discretized time series global Alignment; with application of transportation data.
 </p>
 <p>
-Goulet JA, Nguyen LH, Amiri S. (2020). Tractable Approximate Gaussian Inference for Bayesian Neural Networks.  <em> arXiv preprint arXiv:2004.09281.
+Goulet JA, Nguyen LH, Amiri S. (2020). Tractable Approximate Gaussian Inference for Bayesian Neural Networks.  <em> arXiv preprint arXiv:2004.09281.</em>
 </p>
 <p>
 Amiri, S., Hassani, H., Heravi, S., & Morgan, P. (2020). Ranked Set Sampling with Probability Proportional to Size with Application to Economic Data. 
