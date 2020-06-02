@@ -13,75 +13,31 @@ permalink: papers/
 <a href="https://github.com/saeidamiri1">  GitHub</a>
 
 
-## Submitted\Ongoing articles
+## Submitted
 <ul>
 <p>
 Amiri, S. (2020). How Aggregating improves the Classification’s accuracy.
-<em>  .</em>
-(<a href=""> pdf</a>,  
-<a href="">  Journal</a>,
-<a href=""> Wiki</a> 
-)
 </p>
 <p>
-Amiri, S. (2020).
-Meta inference of Heterogeneous Data Streams.
-<em>  .</em>
-(<a href=""> pdf</a>,  
-<a href="">  Journal</a>,
-<a href=""> Wiki</a> 
-)
+Amiri, S. (2020). Meta inference of Heterogeneous Data Streams.
 </p>
-
 <p>
-Amiri, S. (2020). ESRL: Ensemble SVD-regularized learning to achieve clustering 
-<em>  .</em>
-(<a href=""> pdf</a>,  
-<a href="">  Journal</a>,
-<a href=""> Wiki</a> 
-)
+Amiri, S. (2020). ESRL: Ensemble SVD-regularized learning to achieve clustering.
 </p>
-
 <p>
 Amiri, S., Goulet, JA.,  Morency, C.,  and Saunier, N. (2020).
-Modeling Transportation Time Series using Bayesian Dynamic Linear Model
-<em> .</em>
-(<a href=""> pdf</a>,  
-<a href="">  Journal</a>,
-<a href=""> Wiki</a> 
-)
+Modeling Transportation Time Series using Bayesian Dynamic Linear Model.
 </p>
-
 <p>
-Amiri, S. (2020). Dissimilarity of time series using Discretized time series global Alignment; with application of transportation data
-<em>  .</em>
-(<a href=""> pdf</a>,  
-<a href="">  Journal</a>,
-<a href=""> Wiki</a> 
-)
+Amiri, S. (2020). Dissimilarity of time series using Discretized time series global Alignment; with application of transportation data.
 </p>
-
 <p>
-Goulet JA, Nguyen LH, Amiri S. (2020). Tractable Approximate Gaussian Inference for Bayesian Neural Networks.  <em> arXiv preprint arXiv:2004.09281. <em>
-<em>
-</em>
-(<a href=""> pdf</a>,  
-<a href="">  Journal</a>
-)
+Goulet JA, Nguyen LH, Amiri S. (2020). Tractable Approximate Gaussian Inference for Bayesian Neural Networks.  <em> arXiv preprint arXiv:2004.09281.
 </p>
-
 <p>
 Amiri, S., Hassani, H., Heravi, S., & Morgan, P. (2020). Ranked Set Sampling with Probability Proportional to Size with Application to Economic Data. 
-<em>
-</em>
-(<a href=""> pdf</a>,  
-<a href="">  Journal</a>
-)
 </p>
-
-
 </ul>
-
 
 ## Published
 <ul>
