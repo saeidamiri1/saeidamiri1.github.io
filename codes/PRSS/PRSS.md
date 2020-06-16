@@ -3,7 +3,7 @@ layout: post
 title:  "Bootstrap of RSS"
 date: "2018-01-18"
 published: true
-tags: [r, analytics, economics]
+tags: [RSS]
 output:
   html_document:
     keep_md: true
@@ -24,10 +24,9 @@ The source of codes are stored in Github.
 ```{}
 library(RCurl)
 ### Read codes from github
-script <- getURL("https://raw.githubusercontent.com/saeidamiri1/RSS/master/prss/PRSS.R", ssl.verifypeer = FALSE)
+script <- getURL("https://raw.githubusercontent.com/saeidamiri1/saeidamiri1.github.io/master/codes/PRSS/PRSS.R", ssl.verifypeer = FALSE)
 eval(parse(text = script))
 ########
-
 
 To generate the imperfect RSS from normal(0,1) with Model V with k=5  run the 
 following function that can be adopted for any k
