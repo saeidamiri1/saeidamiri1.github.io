@@ -41,27 +41,21 @@ Amiri, S., Hassani, H., Heravi, S., & Morgan, P. (2020). Ranked Set Sampling wit
 
 ## Published
 <ul>
+ <p>
+ Amiri, S., Jozani, M. J., & Modarres, R. (2020). On multiple imputation for unbalanced ranked set samples with applications in quantile estimation.  <em> Brazilian Journal of Probability and Statistics </em>, 34(4), 752-769.(<a href="https://github.com/saeidamiri1/saeidamiri1.github.io/blob/master/public/published/a2019URSSQ.pdf"> pdf</a>,  
+<a href="https://projecteuclid.org/euclid.bjps/1601020817">  Journal</a>
+)
+</p>
 <p>
-Amiri, S., Clarke, B, Clarke, J & Koepke. H. (2019). A General Hybrid Clustering Technique.
-<em> Accepted in Journal of Computational and Graphical Statistics .</em>
+Amiri, S., Clarke, B. S., Clarke, J. L., & Koepke, H. (2019). A general hybrid clustering technique. Journal of Computational and Graphical Statistics, 28(3), 540-551. .</em>
 (<a href="https://github.com/saeidamiri1/GHC/blob/master/GHCsource/manuscript/manuscript-vr3.pdf"> pdf</a>,  
 <a href="https://amstat.tandfonline.com/doi/full/10.1080/10618600.2018.1546593#">  Journal</a>,
 <a href="https://github.com/saeidamiri1/GHC/wiki"> Wiki</a> 
 )
 </p>
-   
- <p>
-Amiri, S., Jozani Jafari, M., & Modarres, R. (2019). On Multiple Imputation for Unbalanced Ranked Set Samples With Applications in Quantile estimation. Accepted in 
- <em> Brazilian Journal of Probability and Statistics.  </em>
-(<a href="https://github.com/saeidamiri1/saeidamiri1.github.io/blob/master/public/published/a2019URSSQ.pdf"> pdf</a>,  
-<a href="https://projecteuclid.org/euclid.bjps">  Journal</a>
-)
-</p>
- 
- <p>
-Amiri, S., Clarke, B, & Clarke, J. (2018). Clustering categorical data via ensembling dissimilarity matrices. 
-<em>Journal of Computational and Graphical Statistics. Doi: 10.1080/10618600.2017.1305278. 
-</em>
+
+<p>
+Amiri, S., Clarke, B. S., & Clarke, J. L. (2018). Clustering categorical data via ensembling dissimilarity matrices. <em> Journal of Computational and Graphical Statistics</em> , 27(1), 195-208.
 (<a href="https://arxiv.org/pdf/1506.07930v1.pdf">pdf</a>,<a href="http://www.tandfonline.com/doi/full/10.1080/10618600.2017.1305278">  Journal</a>,
 <a href="https://github.com/jlp2duke/EnsCat/wiki/How-To-with-Examples"> supplementary</a>)
 </p>
