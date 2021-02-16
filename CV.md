@@ -4,12 +4,14 @@ title: CV
 permalink: CV/
 ---
 
-Saeid Amiri has experiences of working in academia and collaborating with non-academic partners. Like many research workers in Statistics, I have been working on different projects, part od them published as articles. I believe statistics lies at the core of modern applied science, so I would like to define statistics as "The science of doing another sciences". I enjoy programing, and possess expertise in many statistical softwares.
+Saeid Amiri has experiences of working in academia and collaborating with non-academic partners. Like many research workers in Statistics, I have been working on different projects, part of them published as articles. I believe statistics lies at the core of modern applied science, so I would like to define statistics as "The science of doing another sciences". I enjoy programing, and possess expertise in many statistical softwares.
 
 <h3>
 Interests
 </h3>
 <p>
+Bioinformatics<br>
+Statistical genetics <br>
 Computational Statistics<br>
 Statistical Learning<br>
 Computer intensive methods <br>
