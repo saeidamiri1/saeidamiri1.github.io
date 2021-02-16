@@ -3,8 +3,12 @@ layout: page
 title: CV
 permalink: CV/
 ---
+<h3>
+Bio
+</h3>
+Saeid Amiri received his Ph.d in Statistics from Uppsala University, his work was on computer intensive method. After his graduation, worked in academia and collaborating with non-academic partners. He joined Gan-orlab as bioinformatician. His works focus on bioinformatics and  Statistical genetics.<br>
 
-Saeid Amiri has experiences of working in academia and collaborating with non-academic partners. Like many research workers in Statistics, I have been working on different projects, part of them published as articles. I believe statistics lies at the core of modern applied science, so I would like to define statistics as "The science of doing another sciences". I enjoy programing, and possess expertise in many statistical softwares.
+Like many research workers in Statistics, he has been working on different projects, part of them published as articles. he believes statistics lies at the core of modern applied science, so he would like to define statistics as "The science of doing another sciences". He enjoys programing, and possesses expertise in many softwares.
 
 <h3>
 Interests
@@ -13,17 +17,16 @@ Interests
 Bioinformatics<br>
 Statistical genetics <br>
 Computational Statistics<br>
-Statistical Learning<br>
+Statistical Machine Learning<br>
 Computer intensive methods <br>
 High dimensional data <br>
 Statistical inference
 </p>
 
+
 <h3>
-Selected talks
+Current position
 </h3>
-<p>
-<a href="https://stat.uiowa.edu/events/saeid-amiri-colloquium-speaker"> Uiowa:</a> Clustering categorical data via ensembling methods. <br>
-<a href="http://arc.umich.edu/news-events/tag/midas/"> MIDAS:</a> Random Subspace Scientific Inference based on High dimensional data. <br>
-<a> JSM 2015:</a> Clustering of High-Dimensional Categorical Data.
-</p>
+Bioinformatician at The Neuro (Montreal Neurological Institute-Hospital) <br>
+McGill University <br>
+1033 Pine Avenue West <br>
