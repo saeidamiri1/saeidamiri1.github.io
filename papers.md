@@ -35,6 +35,9 @@ Amiri, S. (2020). Dissimilarity of time series using Discretized time series glo
 Goulet JA, Nguyen LH, Amiri S. (2020). Tractable Approximate Gaussian Inference for Bayesian Neural Networks.  <em> arXiv preprint arXiv:2004.09281.</em>
 </p>
 <p>
+Deka, B., Nguyen, LH., Amiri, S., Goulet, JA. (2020). Tractable Approximate Gaussian Inference for Bayesian Neural Networks. 
+</p>
+<p>
 Amiri, S., Hassani, H., Heravi, S., & Morgan, P. (2020). Ranked Set Sampling with Probability Proportional to Size with Application to Economic Data. 
 </p>
 </ul>
