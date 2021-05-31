@@ -1,3 +1,27 @@
+---
+layout: post
+title:  "Meta inference"
+date: "2021-05-30"
+published: true
+tags: [RSS]
+output:
+  html_document:
+    keep_md: true
+---
+
+
+
+
+
+*Amiri, S. (2021). Meta inference of Heterogeneous Data Streams.
+Journal of Biopharmaceutical Statistics, to be appeared *
+
+
+This work aims to explore the meta inference, where data are being collected from different studies. Providing an accurate estimate of the mean from separate studies is a central aspect of the practical sciences.
+The source of codes are stored in Github. 
+
+
+```{}
 # 
 CM<-function(X){
   mean(unlist(lapply(X,mean)))
@@ -115,4 +139,7 @@ DGDSV<-function(X){
   res0<-DSV(X)*v1/(v1+v2) + DGD(X)*v2/(v1+v2)
   return(res0)
 }
+
+
+```
 
