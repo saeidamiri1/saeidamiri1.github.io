@@ -6,7 +6,7 @@ permalink: CV/
 <h3>
 Bio
 </h3>
-Saeid Amiri received his Ph.d in Statistics from Uppsala University, his work was on computer intensive method. After his graduation, worked in academia and collaborating with non-academic partners. He currently works as bioinformatician and  his works focus on bioinformatics and  Statistical genetics.<br>
+Saeid Amiri received his Ph.d in Statistics from Uppsala University, his work was on computer intensive method. After his graduation, worked in academia and collaborating with non-academic partners.<br>
 
 Like many research workers with a background in Statistics, he has been working on different projects, part of them published as articles. he believes statistics lies at the core of modern applied science, so he would like to define statistics as "The science of doing another sciences". He enjoys programing, and possesses expertise in many softwares.
 
@@ -14,8 +14,7 @@ Like many research workers with a background in Statistics, he has been working 
 Interests
 </h3>
 <p>
-Bioinformatics<br>
-Statistical genetics <br>
+Data Analysis<br>
 Computational Statistics<br>
 Statistical Machine Learning<br>
 Computer intensive methods <br>
@@ -27,6 +26,6 @@ Statistical inference
 <h3>
 Current position
 </h3>
-Bioinformatician at The Neuro (Montreal Neurological Institute-Hospital) <br>
+Data scientist at The Neuro (Montreal Neurological Institute-Hospital) <br>
 McGill University <br>
 1033 Pine Avenue West <br>
