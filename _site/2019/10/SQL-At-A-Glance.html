@@ -1,0 +1,498 @@
+<h1 id="sql-at-a-glance">SQL At A Glance</h1>
+<p>This text is a self-study to learn how use SQL to work with the databases.</p>
+
+<h2 id="contents">Contents</h2>
+<ul>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#premier">Premier</a></li>
+  <li><a href="#Open-Database">Open Database</a>
+    <ul>
+      <li><a href="#challenge-1">Challenge 1</a></li>
+    </ul>
+  </li>
+  <li><a href="#create-database">Create Database</a>
+    <ul>
+      <li><a href="#challenge-2">Challenge 2</a></li>
+    </ul>
+  </li>
+  <li><a href="#selecting-data">Selecting Data</a>
+    <ul>
+      <li><a href="#challenge-3">Challenge 3</a></li>
+    </ul>
+  </li>
+  <li><a href="#add,-delete,-remove">Add, Delete, Remove</a>
+    <ul>
+      <li><a href="#challenge-4">Challenge 4</a></li>
+    </ul>
+  </li>
+  <li><a href="#sorting-and-removing-duplicates">Sorting and Removing Duplicates</a>
+    <ul>
+      <li><a href="#challenge-5">Challenge 5</a></li>
+    </ul>
+  </li>
+  <li><a href="#filtering">Filtering</a>
+    <ul>
+      <li><a href="#challenge-6">Challenge 6</a></li>
+    </ul>
+  </li>
+  <li><a href="#calculation-on-variable">Calculation on variable</a>
+    <ul>
+      <li><a href="#challenge-7">Challenge 7</a></li>
+    </ul>
+  </li>
+  <li><a href="#combining-variables">Combining variables</a>
+    <ul>
+      <li><a href="#challenge-8">Challenge 8</a></li>
+    </ul>
+  </li>
+  <li><a href="#missing-data">Missing Data</a>
+    <ul>
+      <li><a href="#challenge-9">Challenge 9</a></li>
+    </ul>
+  </li>
+  <li><a href="#aggregation">Aggregation</a>
+    <ul>
+      <li><a href="#challenge-10">Challenge 10</a></li>
+    </ul>
+  </li>
+  <li><a href="#combining-Data">Combining Data</a>
+    <ul>
+      <li><a href="#challenge-11">Challenge 11</a></li>
+    </ul>
+  </li>
+  <li><a href="#output-file">Output file</a>
+    <ul>
+      <li><a href="#challenge-12">Challenge 12</a></li>
+    </ul>
+  </li>
+  <li><a href="#sql-in-r">SQL in R</a></li>
+  <li><a href="#sql-in-python">SQL in Python</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+<p>Data can be stored in different formats and each software has own structures. Since the data should be handled with different softwares, there are few options that most data scientists use for storing data: text-file, spreadsheet, and database. The database is very good for big and complex dataset. One of best way working with database is to use the Structured Query Language (SQL) which allows work with database through queries. There are several softwares designed for working with SQL, e.g., mysql, postgresql, MS Access, and MS SQL Server. Here we use sqlite3 which is a lightweight database software written in <code class="language-plaintext highlighter-rouge">C</code> that does not need a server. It runs on the terminal, although there are a couple of database softwares (e.g., DB Browser for SQLite) that functionally work with sqlite3. SQLite commend also can be run from <code class="language-plaintext highlighter-rouge">Python</code> and <code class="language-plaintext highlighter-rouge">R</code>. <br />   To fix definition for the rest of this note; the database is a file that stores related tables, the table includes rows and columns. Often the column is referred to as variable or fields and the row as observation and records. <br />   This text has three companions; 1)<code class="language-plaintext highlighter-rouge">practice.db</code> that is a fake database for the practice, 2)<code class="language-plaintext highlighter-rouge">Challenge</code>, after each section, we provide a challenge which include questions related to the section and readers can test their learning. We also added the correct solutions.  3)<code class="language-plaintext highlighter-rouge">survey.db</code> it is a database used in [sw], we use it for the challenge part.</p>
+
+<h2 id="premier">Premier</h2>
+<p>After installing sqlites, type <code class="language-plaintext highlighter-rouge">sqlite3</code> in terminal to get into the software:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Last login: Fri Sep  6 17:12:01 on ttys000
+SAM-MacBook:~ user1$ sqlite3
+SQLite version 3.24.0 2018-06-04 14:10:15
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite&gt;
+sqlite&gt; .quit
+SAM-MacBook:~ user1$  
+</code></pre></div></div>
+<p>To quit sqlites type <code class="language-plaintext highlighter-rouge">.quit</code>.</p>
+
+<h2 id="open-database">Open Database</h2>
+<p>In this self-study text, we used simple database called <code class="language-plaintext highlighter-rouge">practice.db</code> to describe sqlite3. In order to load the database, type <code class="language-plaintext highlighter-rouge">sqlite3 name_of_database</code>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SAM-MacBook:~ user1$ sqlite3 practice.db
+SQLite version 3.24.0 2018-06-04 14:10:15
+Enter ".help" for usage hints.
+sqlite&gt;
+</code></pre></div></div>
+
+<p>To load a database from inside sqlite3, type <code class="language-plaintext highlighter-rouge">.open name_of_database</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sqlite&gt; .open  practice.db
+</code></pre></div></div>
+
+<p>To see the list of tables type <code class="language-plaintext highlighter-rouge">.tables</code>, more detail of tables can be obtained using <code class="language-plaintext highlighter-rouge">.schema</code>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sqlite&gt; .tables
+employees  expenses   
+sqlite&gt; .schema
+CREATE TABLE expenses (id INTEGER, food_expense DECIMAL, automobile_expense DECIMAL, travel_expense DECIMAL, date DATE);
+CREATE TABLE employees (id INTEGER, name TEXT, family TEXT);
+</code></pre></div></div>
+
+<p>It shows the database has two tables,</p>
+<ul>
+  <li>expenses: the expenses of trip done by employees.<br /> <br />
+  <img src="https://raw.githubusercontent.com/saeidamiri1/SQL/master/image/employee.png" width="160" height="100" /></li>
+  <li>employees: the list of employees in a company.<br />
+<img src="https://raw.githubusercontent.com/saeidamiri1/SQL/master/image/expenses.png" width="290" height="100" /></li>
+</ul>
+
+<p>Tables in the database are often related to each other using a unique identifier, which often called key. The identifiers store in a key column or common columns. For the <code class="language-plaintext highlighter-rouge">practice.db</code> database, the employee <code class="language-plaintext highlighter-rouge">id</code> does this role.</p>
+
+<hr />
+<hr />
+<h4 id="--challenge-1"><span style="color:red">  Challenge 1</span></h4>
+<p>Go to <a href="https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-1">Challenge 1</a> and answer the questions.</p>
+
+<hr />
+<hr />
+
+<h2 id="create-database">Create Database</h2>
+<p>As mentioned a collection of tables constructs a database, to create a table type <code class="language-plaintext highlighter-rouge">CREATE TABLE NAME_OF _TABLES(VARIABLES)</code>.  The following script shows how to create a table <code class="language-plaintext highlighter-rouge">Newemployew</code>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CREATE TABLE Newemployee(id integer, name text, family text, contract text);
+</code></pre></div></div>
+<p>It has four columns <code class="language-plaintext highlighter-rouge">(id, personal, family, contract)</code>,  except <code class="language-plaintext highlighter-rouge">id</code> the rests have the text format.<br />
+The columns in table can have different formats, see <a href="https://www.sqlite.org">www.sqlite.org</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+      <th>More details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>INTEGER</td>
+      <td>integer</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>REAL</td>
+      <td>a floating point number</td>
+      <td>REAL,DOUBLE,DOUBLE PRECISION, FLOAT</td>
+    </tr>
+    <tr>
+      <td>NUMERIC</td>
+      <td>numberic can be broad see</td>
+      <td>NUMERIC,DECIMAL(10,5),BOOLEAN,DATE,DATETIME</td>
+    </tr>
+    <tr>
+      <td>TEXT</td>
+      <td>string</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>NULL</td>
+      <td>the Null values</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>BLOB</td>
+      <td>Binary Large OBject</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<hr />
+<h4 id="-challenge-2-"><span style="color:red"> Challenge 2 </span></h4>
+<p>Go to <a href="https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-2">Challenge 2</a>  and answer the questions.</p>
+
+<hr />
+<hr />
+
+<h2 id="selecting-data">Selecting Data</h2>
+<p>To see the records of table, type
+<code class="language-plaintext highlighter-rouge">SELECT names_of_variables FROM Name_of_table;</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT family, id FROM employees;
+</code></pre></div></div>
+
+<p>To have a tidy display in sqlite3, type the following codes.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.mode column
+.header on
+</code></pre></div></div>
+
+<hr />
+<hr />
+<h4 id="--challenge-3-"><span style="color:red">  Challenge 3 </span></h4>
+<p>Go to <a href="https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-3">Challenge 3</a> and answer the questions.</p>
+
+<hr />
+<hr />
+
+<h2 id="add-delete-remove">Add, Delete, Remove</h2>
+<p>Once a table is created, one can add, change, and remove the recodes using <code class="language-plaintext highlighter-rouge">INSERT</code>, <code class="language-plaintext highlighter-rouge">UPDATE</code>, and <code class="language-plaintext highlighter-rouge">DELETE</code>, respectively.
+You can insert directly the records into the table;</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>INSERT INTO TB(Col1, Col2, ...) VALUES(Val1, Val2, ...)
+</code></pre></div></div>
+<p>where the values of <code class="language-plaintext highlighter-rouge">(Val1, Val2, ...)</code> are inserted in the  <code class="language-plaintext highlighter-rouge">(Col1, Col2, ...)</code>. If you are adding to all the columns, drop the name of table.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>INSERT INTO employees VALUES(1752,'ALex','Nickson');
+INSERT INTO employees(id,name,family) VALUES(1752,'ALex','Nickson');
+</code></pre></div></div>
+
+<p>The records can be inserted from other table:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CREATE TABLE employees_b(name TEXT, family TEXT);
+INSERT INTO  employees_b SELECT name, family FROM employees;
+</code></pre></div></div>
+
+<p>The following simple code shows how to modify an existing record:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UPDATE employees SET id=7152 WHERE name='ALex';
+</code></pre></div></div>
+<p>So the general format of  update is <code class="language-plaintext highlighter-rouge">UPDATE TB SET Col1=Val1, Col1=Val1,...,  WHERE condition</code>.</p>
+
+<p>By specifying the record, one can drop it from table:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE FROM employees WHERE id=7152;
+</code></pre></div></div>
+
+<p>To drop table, just type names of tables after <code class="language-plaintext highlighter-rouge">DROP TABLE</code>, the following script drops the <code class="language-plaintext highlighter-rouge">Survey</code> table,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DROP TABLE Newemployee;
+DROP TABLE employees_b;
+</code></pre></div></div>
+
+<hr />
+<hr />
+<h4 id="--challenge-4-"><span style="color:red">  Challenge 4 </span></h4>
+<p>Go to <a href="https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-4">Challenge 4</a>  and answer the questions.</p>
+
+<hr />
+<hr />
+
+<h2 id="sorting-and-removing-duplicates">Sorting and Removing Duplicates</h2>
+<p>To remove the duplicate, add <code class="language-plaintext highlighter-rouge">DISTINCT</code> in front the column name</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT DISTINCT family FROM employees;
+</code></pre></div></div>
+
+<p>In order to sort, add an <code class="language-plaintext highlighter-rouge">ORDER BY</code> clause to the query.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM employees ORDER BY id;
+</code></pre></div></div>
+<p>The default of ordering is the ascending order, to sort in the opposite order, add <code class="language-plaintext highlighter-rouge">DESC</code>. The following query shows how add multiple orders with different requests:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT id, travel_expense, automobile_expense, food_expense FROM expenses ORDER BY id DESC, travel_expense ASC ;
+</code></pre></div></div>
+
+<hr />
+<hr />
+<h4 id="--challenge-5-"><span style="color:red">  Challenge 5 </span></h4>
+<p>Go to <a href="https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-5">Challenge 5</a>  and answer the questions.</p>
+
+<hr />
+<hr />
+
+<h2 id="filtering">Filtering</h2>
+<p>To select the records for a give criterion, add the <code class="language-plaintext highlighter-rouge">WHERE</code> clause with the record of interest.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM expenses WHERE id=1167;
+</code></pre></div></div>
+
+<p>By using  Logical <code class="language-plaintext highlighter-rouge">AND</code> and <code class="language-plaintext highlighter-rouge">OR</code> can add more criteria,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM expenses WHERE id=5766 AND travel_expense &lt; 2000;
+SELECT * FROM expenses WHERE id=5766 OR id=1167;
+SELECT * FROM employees WHERE family IN ('Amiri', 'Alimehr');
+</code></pre></div></div>
+
+<p>Filtering can be done using particular criteria, apply the <code class="language-plaintext highlighter-rouge">LIKE</code> clause. The following query selects records in <code class="language-plaintext highlighter-rouge">family</code> where they  start with <code class="language-plaintext highlighter-rouge">A</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM employees WHERE family LIKE 'A%';
+</code></pre></div></div>
+<p>Different combination of them can also be used; <code class="language-plaintext highlighter-rouge">%A</code>, <code class="language-plaintext highlighter-rouge">%A%</code>.</p>
+
+<hr />
+<hr />
+<h4 id="-challenge-6-"><span style="color:red"> Challenge 6 </span></h4>
+<p>Go to <a href="https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-6">Challenge 6</a> and answer the questions.</p>
+
+<hr />
+<hr />
+
+<h2 id="calculation-on-variable">Calculation on variable</h2>
+<p>Simple arithmetic can be done in sqlite3 as well,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT 4+2;
+SELECT 4-2;
+SELECT 4+2, 4-2;
+SELECT 4*2;
+SELECT 4/2;
+</code></pre></div></div>
+
+<p>Calculation can be done on the selected variables.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT 1.02*travel_expense FROM expenses WHERE automobile_expense&lt;200;
+SELECT travel_expense, round(4*(travel_expense-100)/8,2) FROM expenses WHERE id IN (1167, 5766);
+</code></pre></div></div>
+
+<hr />
+<hr />
+<h4 id="-challenge-7-"><span style="color:red"> Challenge 7 </span></h4>
+<p>Go to <a href="https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-7">Challenge 7</a>  and answer the questions.</p>
+
+<hr />
+<hr />
+
+<h2 id="combining-variables">Combining variables</h2>
+<p>One can combine variables using <code class="language-plaintext highlighter-rouge">||</code>,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT name || family FROM employees;
+SELECT name || ' ' || family FROM employees;
+SELECT family || ', ' || name FROM employees;
+</code></pre></div></div>
+
+<p>If you want to combine the output of two queries use the <code class="language-plaintext highlighter-rouge">UNION</code> clause between them.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM employees WHERE name='Saeid' UNION SELECT * FROM employees WHERE name='Leila';
+</code></pre></div></div>
+
+<p>The UNION drops the duplicate, and actually run DISTINCT on it as default. If there is not a duplicate in output of two query, use <code class="language-plaintext highlighter-rouge">UNION ALL</code> which is faster than UNION.</p>
+
+<p>To clean identifier, one can use <code class="language-plaintext highlighter-rouge">substr(variable, s, l)</code>, it cuts record from starting point <code class="language-plaintext highlighter-rouge">s</code> for length <code class="language-plaintext highlighter-rouge">l</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT DISTINCT substr(id, 1, 3) AS Majoremployee FROM employees;
+</code></pre></div></div>
+
+<hr />
+<hr />
+<h4 id="--challenge-8-"><span style="color:red">  Challenge 8 </span></h4>
+<p>Go to <a href="https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-8">Challenge 8</a> and answer the questions.</p>
+
+<hr />
+<hr />
+
+<h2 id="missing-data">Missing Data</h2>
+<p>Missing, empthy, or NULL is part of database, SQL easily handle missing,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM expenses WHERE id IS NULL;
+SELECT * FROM expenses WHERE id IS NOT NULL;
+SELECT * FROM expenses WHERE id = 8418 AND travel_expense IS NULL;
+</code></pre></div></div>
+
+<hr />
+<hr />
+<h4 id="-challenge-9-"><span style="color:red"> Challenge 9 </span></h4>
+<p>Go to <a href="https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-9">Challenge 9</a>  and answer the questions.</p>
+
+<hr />
+<hr />
+
+<h2 id="aggregation">Aggregation</h2>
+<p>You can retrieves the Statistical summary of variable for other variables, the following scripts generate mean and min of variable reading.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT avg(travel_expense) FROM expenses;
+SELECT avg(travel_expense) FROM expenses WHERE id = 8418;
+SELECT min(travel_expense) FROM expenses WHERE id = 8418;
+</code></pre></div></div>
+
+<p>Sometimes should find a summary statistics of variable for  another variables</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT id, count(*) FROM expenses  WHERE  id = 8418 AND travel_expense &lt;= 2000;
+SELECT id, count(*),max(travel_expense), sum(travel_expense) FROM expenses;
+</code></pre></div></div>
+
+<hr />
+<hr />
+<h4 id="-challenge-10-"><span style="color:red"> Challenge 10 </span></h4>
+<p>Go to <a href="https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-10">Challenge 10</a>  and answer the questions.</p>
+
+<hr />
+<hr />
+
+<h2 id="combining-data">Combining Data</h2>
+<p>Using the <code class="language-plaintext highlighter-rouge">JOIN</code> clause can creates the cross product of two tables.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM employees JOIN expenses;
+</code></pre></div></div>
+<p>In order to  match the data with an index in both dataset, use <code class="language-plaintext highlighter-rouge">WHERE</code> or <code class="language-plaintext highlighter-rouge">ON</code>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM employees JOIN expenses WHERE employees.id = expenses.id;
+</code></pre></div></div>
+
+<p>You can select</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT employees.name, employees.family, expenses.travel_expense
+FROM   employees JOIN expenses
+ON     employees.id = expenses.id;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT employees.name, employees.family, expenses.travel_expense
+FROM   employees JOIN expenses
+ON     employees.id = expenses.id
+AND    expenses.travel_expense IS NOT NULL
+AND    expenses.travel_expense !=0;
+</code></pre></div></div>
+
+<hr />
+<hr />
+
+<h3 id="-challenge-11-"><span style="color:red"> Challenge 11 </span></h3>
+<p>Go to <a href="https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-11">Challenge 11</a>  and answer the questions.</p>
+
+<hr />
+<hr />
+
+<h2 id="output-file">Output file</h2>
+<p>The tables can be saved in the standard format. SQL has several arguments to save file with a correct formant, .header, .mode, .separator.   The name of output file can be written in front .once and  .output.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.header on
+.mode csv
+.separator ,
+.once dataout.csv
+SELECT * FROM employees;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.mode csv
+.output data.csv
+SELECT * from expenses;
+</code></pre></div></div>
+
+<p>The table saved in can be imported to sql</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.mode csv
+.import dataout.csv id
+</code></pre></div></div>
+
+<p>To see the output as temporary file out of terminal, type</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.output '|open -f'
+SELECT * from employees;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.excel
+SELECT * from employees;
+</code></pre></div></div>
+
+<p>Once the operations done, you can save it or create a new database using <code class="language-plaintext highlighter-rouge">.save file.bd</code>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.save  practic_new.db;
+</code></pre></div></div>
+
+<hr />
+<hr />
+<h3 id="--challenge-12-"><span style="color:red">  Challenge 12 </span></h3>
+<p>Go to <a href="https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-12">Challenge 12</a>  and answer the questions.</p>
+
+<hr />
+<hr />
+<h2 id="sql-in-python">SQL in Python</h2>
+<p>In order to work with <code class="language-plaintext highlighter-rouge">sqlite3</code> in Python you need to import the <code class="language-plaintext highlighter-rouge">import sqlite3</code>. You don’t need to install sqlite3 module, because it is standard library.  To jump in, run the following codes:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import sqlite3
+conn = sqlite3.connect("Practice.db")
+cc = conn.cursor()
+cc.execute("SELECT family, name FROM employees;")
+results = cc.fetchall()
+results
+</code></pre></div></div>
+
+<p>The first line load the module, the second line establishes a connection to database.
+The third line creates a cursor, it keep track of where we are in the database.
+Line 4 executes the query in sqlite and finally the commend <code class="language-plaintext highlighter-rouge">cursor.fetchall()</code> brings them to Python.
+The result is stored as list in Python and can work on data in Python. Any query we learned can be done inside <code class="language-plaintext highlighter-rouge">cursor.execute()</code>.
+Once the data is brought, you should disconnect Python</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cursor.close()
+conn.close()
+</code></pre></div></div>
+<p>You can find more in [dpo], [sw2], and [qc].</p>
+
+<h2 id="sql-in-r">SQL in R</h2>
+<p>In order to run a query inside the R’s code, you need to load <code class="language-plaintext highlighter-rouge">library(RSQLite)</code>, the following lines show: 1) load R’s Library, 2) connect to database, and 3) executing the query.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>library(RSQLite)
+conn &lt;- dbConnect(SQLite(), "practice.db")
+results  &lt;- dbGetQuery(conn, "SELECT family, name FROM employees;")
+results
+</code></pre></div></div>
+
+<p>The result of running query is store as data.frame in R. Once running the query is done, disconnect it; <code class="language-plaintext highlighter-rouge">dbDisconnect(connection)</code>. Good references for working with sqlite in R are [wdc], [dor], and [sw3].</p>
+
+<p>RStudio provides an editor for working with Sqlite, which is accessible using <code class="language-plaintext highlighter-rouge">File&gt;New File&gt; SQL Script</code>, so the discussed queries can be run from RStudio. R has a few libraries that are built to work professionally with the database; <a href="https://db.rstudio.com/dbi">DBI</a> provides a database interface, <a href="https://db.rstudio.com/dplyr">dbplyr</a> is an extension of dplyr to work with database, <a href="https://db.rstudio.com/odbc">odbc</a> which is a database interface to Open Database Connectivity (ODBC). A complete list of packages built for working with R can be found in <a href="https://db.rstudio.com/">Databases using R</a>.</p>
+
+<h2 id="more-reading">More reading</h2>
+<p>There are several online websites for learning Sqlites, we can suggest [w3], [wt], and [qlt].</p>
+
+<p><strong><a href="#contents">⬆ back to top</a></strong></p>
+<h2 id="references">References</h2>
+
+<p>[sw] https://swcarpentry.github.io/sql-novice-survey/ <br />
+[dpo]  https://docs.python.org/3.7/library/sqlite3.html <br />
+[sw2] https://swcarpentry.github.io/sql-novice-survey/10-prog/index.html <br />
+[gc]  https://github.com/CoreyMSchafer/code_snippets/tree/master/Python-SQLite <br />
+[dor] https://datacarpentry.org/R-ecology-lesson/05-r-and-databases.html <br />
+[wdc] https://www.datacamp.com/community/tutorials/sqlite-in-r <br />
+[sw3] https://swcarpentry.github.io/sql-novice-survey/11-prog-R/index.html <br />
+[w3] https://www.w3schools.com/sql/sql_create_table.asp <br />
+[wt]https://www.techonthenet.com/sql/index.php <br />
+[qlt]https://www.sqlitetutorial.net/<br /></p>
+
+<h3 id="license">License</h3>
+<p>Copyright (c) 2019 Saeid Amiri and Leila Alimehr</p>

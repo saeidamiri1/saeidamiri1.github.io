@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Bootstrap Categorical &middot; Saeid Amiri
+    
+  </title>
+
+  <!-- CSS -->
+ 	<!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+   <link rel="stylesheet" href="/public/css/lanyon.css">
+
+        <link href="/css/blog.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/pygments.css">
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p></p>
+  </div>
+<div class="contact-buttons" style="line-height:160%;margin-left:30px;margin-top:10px">
+<p>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//saeidamiri1.github.io/css/academicons.css">
+  <a href="mailto:saeid.amiri1@gmail.com" target="_blank" style="color:#855f65;"><i class="fa fa-envelope" style="font-size:1em"></i> &nbsp </a>
+<a href="https://github.com/saeidamiri1" target="_blank" style="color:#855f65;"><i class="fa fa-github" aria-hidden="true"></i> &nbsp </a>
+<a href="https://www.researchgate.net/profile/Saeid_Amiri6" target="_blank" style="color:#855f65;"><i class="ai ai-researchgate ai-3x" style="font-size:1em"></i> &nbsp <br></a> 
+<a href="https://scholar.google.com/citations?user=iroPmuAAAAAJ&hl=en" target="_blank" style="color:#855f65;"><i class="ai ai-google-scholar-square ai-3x" style="font-size:1em"></i> &nbsp </a>
+</p>
+</div>
+     
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/papers/">Papers</a>
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/software/">Software</a>
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/courses/">Courses</a>
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/Misc">Misc</a>
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/blog">Blog</a>
+               <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/CV">CV</a>
+        <a class="sidebar-nav-item" href="https://github.com/saeidamiri1">GitHub</a>
+               <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/tags">Tags</a>
+
+  </nav>
+
+  <div class="sidebar-item">
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Saeid Amiri</a>
+            <small></small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Bootstrap Categorical</h1>
+    <p class="post-meta"><time datetime="2018-01-18T00:00:00-05:00" itemprop="datePublished">Jan 18, 2018</time></p>
+    
+
+
+  
+  </header>
+
+ <div class="post-content" itemprop="articleBody">
+    <p><em>Amiri, S., &amp; Modarres, R. (2017). Comparison of tests of contingency tables. Journal of biopharmaceutical statistics, 1-13. Doi: 10.1080/10543406.2016.1269786.</em></p>
+
+<p>The bootstrap tests given in Amiri and Modarres (2017) is implemented in R and explained here.
+The source of codes are stored in Github.</p>
+
+<pre><code class="language-{}">##### Necessary libraries in R
+&gt; library(RCurl)
+&gt; library(MASS)
+&gt; library(boot)
+### Read codes from github
+&gt; script &lt;- getURL("https://raw.githubusercontent.com/saeidamiri1/saeidamiri1.github.io/master/codes/bootcat/bootcat.R", ssl.verifypeer = FALSE)
+&gt; eval(parse(text = script))
+########
+
+
+###########################################
+###### Example used in paper
+## enter data in a matrix
+&gt; m&lt;-matrix(c(7,2,5,10,0,1),nrow=2)
+
+&gt; chisq.test(m)$p.value
+[1] 0.06676657
+Warning message:
+In chisq.test(m) : Chi-squared approximation may be incorrect
+
+&gt; fisher.test(m)
+Fisher's Exact Test for Count Data
+data: m
+p-value = 0.06219
+alternative hypothesis: two.sided
+
+################
+##Bootsrap test
+&gt; B&lt;-2000
+&gt; I&lt;-dim(m)[1]
+&gt; J&lt;-dim(m)[2]
+
+
+&gt; BX(m,B)
+[1] 0.044
+There were 50 or more warnings (use warnings() to see the first 50)
+
+
+&gt; BP(m,B)
+[1] 0.032
+There were 50 or more warnings (use warnings() to see the first 50)
+
+
+###########################################
+###########################################
+########################################### 
+&gt; chisq.test(m)$p.value
+[1] 0.815404
+
+
+&gt; fisher.test(m)
+Fisher's Exact Test for Count Data
+
+data: m
+p-value = 0.8175
+alternative hypothesis: two.sided
+
+&gt; BX(m,B)
+[1] 0.8335
+There were 50 or more warnings (use warnings() to see the first 50)
+
+&gt; BP(m,B)
+[1] 0.8285
+There were 50 or more warnings (use warnings() to see the first 50)
+</code></pre>
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  
+  <script type="text/javascript" async
+    src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  </div>
+
+</article>
+
+
+
+
+
+
+
+      </div>
+    </div>
+   <script id="dsq-count-scr" src="//saeidamiri1-github-io.disqus.com/count.js" async></script>
+  </body>
+</html>

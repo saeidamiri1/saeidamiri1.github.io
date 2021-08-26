@@ -1,0 +1,1 @@
+Garber, M. E., Troyanskaya, O. G., Schluens, K., Petersen, S., Thaesler, Z., Pacyna-Gengelbach, M., ... & Altman, R. B. (2001). Diversity of gene expres- sion in adenocarcinoma of the lung. Proceedings of the National Academy of Sciences, 98(24), 13784-13789.

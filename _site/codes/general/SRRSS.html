@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Random RSS &middot; Saeid Amiri
+    
+  </title>
+
+  <!-- CSS -->
+ 	<!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+   <link rel="stylesheet" href="/public/css/lanyon.css">
+
+        <link href="/css/blog.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/pygments.css">
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p></p>
+  </div>
+<div class="contact-buttons" style="line-height:160%;margin-left:30px;margin-top:10px">
+<p>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//saeidamiri1.github.io/css/academicons.css">
+  <a href="mailto:saeid.amiri1@gmail.com" target="_blank" style="color:#855f65;"><i class="fa fa-envelope" style="font-size:1em"></i> &nbsp </a>
+<a href="https://github.com/saeidamiri1" target="_blank" style="color:#855f65;"><i class="fa fa-github" aria-hidden="true"></i> &nbsp </a>
+<a href="https://www.researchgate.net/profile/Saeid_Amiri6" target="_blank" style="color:#855f65;"><i class="ai ai-researchgate ai-3x" style="font-size:1em"></i> &nbsp <br></a> 
+<a href="https://scholar.google.com/citations?user=iroPmuAAAAAJ&hl=en" target="_blank" style="color:#855f65;"><i class="ai ai-google-scholar-square ai-3x" style="font-size:1em"></i> &nbsp </a>
+</p>
+</div>
+     
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/papers/">Papers</a>
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/software/">Software</a>
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/courses/">Courses</a>
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/Misc">Misc</a>
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/blog">Blog</a>
+               <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/CV">CV</a>
+        <a class="sidebar-nav-item" href="https://github.com/saeidamiri1">GitHub</a>
+               <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/tags">Tags</a>
+
+  </nav>
+
+  <div class="sidebar-item">
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Saeid Amiri</a>
+            <small></small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Random RSS</h1>
+    <p class="post-meta"><time datetime="2018-01-23T00:00:00-05:00" itemprop="datePublished">Jan 23, 2018</time></p>
+    
+
+
+  
+  </header>
+
+ <div class="post-content" itemprop="articleBody">
+    <p>*Amiri, S., Jozani Jafari, M., &amp; Modarres, R. (2018). Randomly Selected Order Statistics in Ranked Set Sampling: less expensive comparable alternative to simple random sampling. Environmental and Ecological Statistics. *</p>
+
+<p>The following includes the codes of RSS, RRSS and SRRSS on the data generated from the normal distribution  N(0,1)</p>
+
+<pre><code class="language-{}">### generate RSS with R from normal 
+
+rss&lt;-function(r){
+x1&lt;-NULL
+for( i in 1:r){
+x1[i]&lt;-sort(rnorm(r))[i]
+}
+mean(x1)
+}
+
+
+rrss&lt;-function(n,r){
+x1&lt;-NULL
+k&lt;-sample(n,r,replace=F)
+for( i in 1:(r)){
+x1[i]&lt;-sort(rnorm(n))[k[i]]
+}
+mean(x1)
+}
+
+
+
+
+srrss&lt;-function(n,r){
+x1&lt;-NULL
+k1&lt;-sample(c(1:(n/2)),r/2)
+k2&lt;-n+1-k1
+k&lt;-c(k1,k2)
+for( i in 1:(r)){
+x1[i]&lt;-sort(rnorm(n))[k[i]]
+}
+mean(x1)
+}
+
+
+#############
+n&lt;-10
+r&lt;-6
+a&lt;-b&lt;-c&lt;-d&lt;-e&lt;-f&lt;-NULL
+for(i in 1:50000){
+a[i]&lt;-rss(r)
+b[i]&lt;-rrss(n,r)
+c[i]&lt;-srrss(n,r)
+}
+
+
+c(mean(a), var(a))
+c(mean(b), var(b))
+c(mean(c), var(c))
+
+</code></pre>
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  
+  <script type="text/javascript" async
+    src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  </div>
+
+</article>
+
+
+
+
+
+
+
+      </div>
+    </div>
+   <script id="dsq-count-scr" src="//saeidamiri1-github-io.disqus.com/count.js" async></script>
+  </body>
+</html>

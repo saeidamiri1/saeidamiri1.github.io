@@ -1,8 +1,16 @@
-# Dependencies
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+title:  Saeid Amiri
+tagline:          ''
+description:      ''
+url:              http://saeidamiri1.github.io
+github_username:  saeidamiri1
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+
+permalink: /:year/:month/:title.html
+
 
 gems: ["jekyll-paginate", "jekyll-gist"]
 
@@ -11,22 +19,7 @@ highligher: rouge
 paginate: 5
 paginate_path: "page:num"
 
-
-# Permalinks
-permalink:        pretty
-
-# Setup
-title:            Saeid Amiri
-tagline:          ''
-description:      ''
-url:              http://saeidamiri1.github.io
-
-
-github_username:  saeidamiri1
-permalink: /:year/:month/:title.html
-excerpt_separator: <!--more-->
-
-
-
-
-theme: jekyll-theme-cayman
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge

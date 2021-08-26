@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Meta inference &middot; Saeid Amiri
+    
+  </title>
+
+  <!-- CSS -->
+ 	<!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+   <link rel="stylesheet" href="/public/css/lanyon.css">
+
+        <link href="/css/blog.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/pygments.css">
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p></p>
+  </div>
+<div class="contact-buttons" style="line-height:160%;margin-left:30px;margin-top:10px">
+<p>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//saeidamiri1.github.io/css/academicons.css">
+  <a href="mailto:saeid.amiri1@gmail.com" target="_blank" style="color:#855f65;"><i class="fa fa-envelope" style="font-size:1em"></i> &nbsp </a>
+<a href="https://github.com/saeidamiri1" target="_blank" style="color:#855f65;"><i class="fa fa-github" aria-hidden="true"></i> &nbsp </a>
+<a href="https://www.researchgate.net/profile/Saeid_Amiri6" target="_blank" style="color:#855f65;"><i class="ai ai-researchgate ai-3x" style="font-size:1em"></i> &nbsp <br></a> 
+<a href="https://scholar.google.com/citations?user=iroPmuAAAAAJ&hl=en" target="_blank" style="color:#855f65;"><i class="ai ai-google-scholar-square ai-3x" style="font-size:1em"></i> &nbsp </a>
+</p>
+</div>
+     
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/papers/">Papers</a>
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/software/">Software</a>
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/courses/">Courses</a>
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/Misc">Misc</a>
+        <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/blog">Blog</a>
+               <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/CV">CV</a>
+        <a class="sidebar-nav-item" href="https://github.com/saeidamiri1">GitHub</a>
+               <a class="sidebar-nav-item" href="https://saeidamiri1.github.io/tags">Tags</a>
+
+  </nav>
+
+  <div class="sidebar-item">
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Saeid Amiri</a>
+            <small></small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Meta inference</h1>
+    <p class="post-meta"><time datetime="2021-05-30T00:00:00-04:00" itemprop="datePublished">May 30, 2021</time></p>
+    
+
+
+  
+  </header>
+
+ <div class="post-content" itemprop="articleBody">
+    <p>*Amiri, S. (2021). Meta inference of Heterogeneous Data Streams.
+Journal of Biopharmaceutical Statistics, to be appeared *</p>
+
+<p>This work aims to explore the meta inference, where data are being collected from different studies. Providing an accurate estimate of the mean from separate studies is a central aspect of the practical sciences.
+The source of codes are stored in Github.</p>
+
+<pre><code class="language-{}"># 
+CM&lt;-function(X){
+  mean(unlist(lapply(X,mean)))
+}
+
+#poolrd mean
+PM&lt;-function(X){
+  mean(unlist(X))
+}
+
+# GD estimstor
+GD&lt;-function(X){
+  wgd&lt;-(unlist(lapply(X,length))/unlist(lapply(X,var)) )
+  wgd&lt;-wgd/sum( wgd)
+  sum(wgd*unlist(lapply(X,mean)))
+}
+
+
+#MlE estimator
+MLE&lt;-function(X){
+  S00&lt;-unlist(lapply(X,var))
+  n00&lt;-unlist(lapply(X,length))
+  xba1&lt;-unlist(lapply(X,mean))
+  ML0&lt;-function(theta){
+    theta0&lt;-0
+    for( i in 1:(length(X))){
+      theta0&lt;-theta0+sum(n00[i]/2*(log(theta[i+1]^2)+S00[i]/theta[i+1]^2+(xba1[i]-theta[1])^2/theta[i+1]^2))
+    }
+    return(theta0)
+  }
+  s0&lt;-nlm(ML0, theta &lt;- c(mean(xba1),S00^.5), hessian=TRUE)$estimate[(1:(length(X)))+1]
+  wgd&lt;-unlist(lapply(X,length))/ s0^2
+  wgd&lt;-wgd/sum(wgd)
+  sum(wgd*unlist(lapply(X,mean)))
+}
+
+
+
+#####
+SV&lt;-function(X){
+  wgd&lt;-(unlist(lapply(X,var))/unlist(lapply(X,length)))
+  wgd0&lt;-NULL
+  for( i in 1:(length(X))){ wgd0[i]&lt;-sum(wgd[-i]) }
+  wgd0&lt;-wgd0/sum(wgd0)
+  sum(wgd0*unlist(lapply(X,mean)))
+}
+
+
+
+DGD&lt;-function(X){
+  xm0&lt;-GD(X)
+  var1&lt;-function(x) sum((x-xm0)^2)/(length(x)-1)
+  wgd&lt;-(unlist(lapply(X,length))/unlist(lapply(X,var1)) )
+  wgd&lt;-wgd/sum( wgd)
+  sum(wgd*unlist(lapply(X,mean)))
+}
+
+DSV&lt;-function(X){ 
+  xm0&lt;-SV(X)
+  var1&lt;-function(x) sum((x-xm0)^2)/(length(x)-1)
+  wgd&lt;-(unlist(lapply(X,var1))/unlist(lapply(X,length)))
+  wgd0&lt;-NULL
+  for( i in 1:(length(X))){ wgd0[i]&lt;-sum(wgd[-i]) }
+  wgd0&lt;-wgd0/sum(wgd0)
+  sum(wgd0*unlist(lapply(X,mean)))
+}
+
+  
+  
+####################
+  ##################
+  
+
+VDGD&lt;-function(X){
+  bz&lt;-NULL
+  for(b in 1:500){
+    z&lt;-list()
+    j&lt;-1
+    for(i in 1:length(X)){
+      z[[j]]&lt;-sample(X[[i]],replace=TRUE)
+      j&lt;-j+1
+    }
+    bz[b]&lt;-DGD(z)
+  }
+  var(bz)
+}
+
+
+VDSV&lt;-function(X){
+  bz&lt;-NULL
+  for(b in 1:500){
+    z&lt;-list()
+    j&lt;-1
+    for(i in 1:length(X)){
+      z[[j]]&lt;-sample(X[[i]],replace=TRUE)
+      j&lt;-j+1
+    }
+    bz[b]&lt;-DSV(z)
+  }
+  var(bz)
+}
+
+DGDSV&lt;-function(X){
+  SL0&lt;-which.min(c(VDGD(X),VDSV(X)))
+  if(SL0==1) res0&lt;-DGD(X)
+  if(SL0==2) res0&lt;-DSV(X)
+  return(res0)
+}
+
+
+DGDSV&lt;-function(X){
+  v1&lt;-VDGD(X)
+  v2&lt;-VDSV(X)
+  
+  res0&lt;-DSV(X)*v1/(v1+v2) + DGD(X)*v2/(v1+v2)
+  return(res0)
+}
+
+
+</code></pre>
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  
+  <script type="text/javascript" async
+    src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  </div>
+
+</article>
+
+
+
+
+
+
+
+      </div>
+    </div>
+   <script id="dsq-count-scr" src="//saeidamiri1-github-io.disqus.com/count.js" async></script>
+  </body>
+</html>

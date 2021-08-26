@@ -1,0 +1,113 @@
+<p>Clustering is an unsupervised technique to find underlying structure in a dataset by grouping
+data points into subsets that are as homogeneous as possible, clustering is a widely used unsupervised technique for identifying natural classes within a set of data. <a href="https://arxiv.org/pdf/1503.01183v2.pdf">Amiri et al. (2018)</a> proposed a clustering technique for general clustering problems including those that have non-convex clusters. The proposed is fully nonparametric and it generates clusters for a given desired number of clusters K. They also discussed estimating the size of cluster.</p>
+
+<h2 id="clustering">Clustering</h2>
+<p>The proposed clustering method is referred to as Stabilized Hybrid Clustering (SHC) and its steps is presented in Algorithm 1,</p>
+
+<p><img src="https://github.com/saeidamiri1/GHC/blob/master/algorithm1.png" width="800" /></p>
+
+<p>Algorithm 1 is implemented in R,</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SHC(x,K,B=200,knmin,knmax)
+</code></pre></div></div>
+
+<p>The arguments are: <code class="language-plaintext highlighter-rouge">x</code> is the observation, use the R’s matrix format. <code class="language-plaintext highlighter-rouge">B</code> is number of run to get a stabilized clusters, we used B=200 in our computations. Concerning <code class="language-plaintext highlighter-rouge">B</code>, run the code with different Bs and if you see huge different in result, increase the number of iterations. knmin and knmax are the minimum and maximum size of cluster to get the stabilized clustering. We used knmin=2 and knmax=n/5, where n is the sample size.<br />
+This <code class="language-plaintext highlighter-rouge">SHC()</code> provides the distance matrix and the predicted cluster.</p>
+
+<h2 id="size-of-cluster">Size of Cluster</h2>
+<p><a href="https://arxiv.org/pdf/1503.01183v2.pdf">Amiri et al. (2018)</a> also discussed a technique to estimate the size of clusters, it is presented in Algorithm 2,</p>
+
+<p><img src="https://github.com/saeidamiri1/GHC/blob/master/algorithm2.png" width="800" /></p>
+
+<p>Algorithm 2 is implemented in R,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>EK(observation,B=200,knmin,knmax)
+</code></pre></div></div>
+
+<h2 id="source">Source</h2>
+<p>The source of codes are available in GitHub and using the following code can be uploaded in R</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; source('https://raw.githubusercontent.com/saeidamiri1/GHC/master/SHC.R')
+</code></pre></div></div>
+
+<p>Also load the following libraries to run the computations in parallely,</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; library("foreach")
+&gt; library("doParallel")
+</code></pre></div></div>
+
+<h2 id="data-set">Data set</h2>
+<p>To describe the codes, we used the spiral data which is a non-convex data, the following script load source, dataset and plot it,</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; source('https://raw.githubusercontent.com/saeidamiri1/GHC/master/SHC.R')
+&gt; library("foreach")
+&gt; library("doParallel")
+
+&gt; datasource &lt;- "https://github.com/saeidamiri1/GHC/blob/master/SPIRAL.RData?raw=true"
+&gt; load(url(datasource))
+&gt; Spiral
+&gt; plot(Spiral)
+</code></pre></div></div>
+<p><img src="https://github.com/saeidamiri1/GHC/blob/master/Rplot.jpeg" width="300" /></p>
+
+<h1 id="run-the-cluster">Run the Cluster</h1>
+<p>Once the data and the codes are loaded in R, the clustering can be obtained using the following script</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; knmin0&lt;-2
+&gt; knmax0&lt;-floor(dim(Spiral)[1]/5)
+&gt; knmax0
+[1] 62
+&gt; CLUS&lt;-SHC(Spiral,3,B=200,knmin=knmin0,knmax=knmax0)
+</code></pre></div></div>
+
+<p>The dendrogram can be also plotted,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; # plot the dendrogram
+&gt; plot(hclust(CLUS[[1]],method="single"),h=-1)
+</code></pre></div></div>
+
+<p><img src="https://github.com/saeidamiri1/GHC/blob/master/Rplot01.jpeg" width="500" /></p>
+
+<p>The predicted clusters are also available,</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; # print the assigned clusters to observation
+&gt; print(CLUS[[2]])
+  [1] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ [42] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ [83] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+[124] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+[165] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+[206] 2 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+[247] 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+[288] 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># plot the data with the assigned clusters
+plot(Spiral,col=CLUS[[2]])
+</code></pre></div></div>
+<p><img src="https://github.com/saeidamiri1/GHC/blob/master/Rplot02.jpeg" width="300" /></p>
+
+<p>It is of interest to run the proposed method for a cluster of #4,  the following shows the codes and the clusters,</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; CLUS&lt;-SHC(Spiral,4,B=200,knmin=knmin0,knmax=knmax0)
+&gt; plot(Spiral,col=CLUS[[2]])
+</code></pre></div></div>
+
+<p><img src="https://github.com/saeidamiri1/GHC/blob/master/Rplot03.jpeg" width="300" /></p>
+
+<h2 id="size-of-clusters">Size of clusters</h2>
+<p>The following script shows the function of estimating the size of clusters,</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; KCLUS&lt;-EK(Spiral,B=200,knmin=knmin0,knmax=knmax0)
+[1] 3
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># plot the dendrogram
+&gt; plot(hclust(KCLUS[[1]],method="single"),h=-1)
+</code></pre></div></div>
+<p><img src="https://github.com/saeidamiri1/GHC/blob/master/Rplot04.jpeg" width="500" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; # print the assigned clusters to observation
+&gt; print(KCLUS[[2]])
+[1] 3
+</code></pre></div></div>
+
+<h3 id="references">References</h3>
+<p><a href="https://arxiv.org/pdf/1503.01183v2.pdf">Amiri, S., Clarke, B, Clarke, J. &amp; Koepke, H.A. (2018). A General Hybrid Clustering Technique.</a></p>

@@ -1,0 +1,3172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Saeid Amiri</title>
+ <link href="http://saeidamiri1.github.io/atom.xml" rel="self"/>
+ <link href="http://saeidamiri1.github.io/"/>
+ <updated>2021-08-25T23:42:25-04:00</updated>
+ <id>http://saeidamiri1.github.io</id>
+ <author>
+   <name></name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Cheat Sheet of Numpy,  Panda and python core</title>
+   <link href="http://saeidamiri1.github.io/2019/10/cheatsheet-numpy-panda.html"/>
+   <updated>2019-10-05T00:00:00-04:00</updated>
+   <id>http://saeidamiri1.github.io/2019/10/cheatsheet-numpy-panda</id>
+   <content type="html">&lt;h2 id=&quot;contents&quot;&gt;Contents&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#primer&quot;&gt;Primer&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#libraries&quot;&gt;Libraries&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#starting&quot;&gt;Starting&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#mathematical-operations&quot;&gt;Mathematical operations&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#built-in-Constants&quot;&gt;Built-in Constants&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#type&quot;&gt;Type&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#lists&quot;&gt;Lists&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#dictionary&quot;&gt;Dictionary&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#built-in-function&quot;&gt;Built-in function&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#user-function&quot;&gt;User Function&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#iterates&quot;&gt;Iterates&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#boolean-comparisons&quot;&gt;Boolean Comparisons&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#numpy&quot;&gt;Numpy&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#arrays&quot;&gt;Arrays&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#random&quot;&gt;Random&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#o\s&quot;&gt;O\S&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#inspecting-arrays&quot;&gt;Inspecting arrays&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#sorting&quot;&gt;sorting&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#reshaping&quot;&gt;Reshaping&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#concatenate&quot;&gt;Concatenate&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#copying&quot;&gt;Copying&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#adding/removing-elements&quot;&gt;Adding/Removing Elements&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#indexing&quot;&gt;Indexing&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#slicing&quot;&gt;Slicing&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#subsetting&quot;&gt;Subsetting&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#vector-Math&quot;&gt;Vector Math&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#aggregate-functions&quot;&gt;Aggregate Functions&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#pandas&quot;&gt;Pandas &lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#create-data-frame-and-series&quot;&gt;Create Data frame and series&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#i/o&quot;&gt;I/O&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#inspecting-arrays&quot;&gt;Inspecting arrays&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#sorting&quot;&gt;sorting&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#adding/removing-elements&quot;&gt;Adding/Removing Elements&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#missing&quot;&gt;Missing &lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#indexing&quot;&gt;Indexing&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#subsetting&quot;&gt;Subsetting&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#group-by&quot;&gt;Group by&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#apply&quot;&gt;Apply &lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#join/Combine&quot;&gt;Join/Combine&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#aggregate-functions&quot;&gt;Aggregate Functions&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;primer&quot;&gt;Primer&lt;/h1&gt;
+
+&lt;h2 id=&quot;libraries&quot;&gt;Libraries&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pip install numpy&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Install library&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pip install git+https://github.com/mwaskom/seaborn.git&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Install from GitHub&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;import numpy&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;load library&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;starting&quot;&gt;starting&lt;/h2&gt;
+
+&lt;p&gt;By putting # infront line, Python ignores running the rest.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x=1 # Python ignore&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Python ignores running after #&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;import os&lt;/code&gt; &lt;br /&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;os.getcwd()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;See the working directory&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;os.chdir()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Change  the working directory&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;mathematical-operations&quot;&gt;Mathematical operations&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1 + 2&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Addition&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1 - 2&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Subtraction&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1 / 2&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Division&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1 * 2&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Multiplication&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1 ** 2&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Power&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x += 1&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Assign the value of x + 1 to x&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x -= 1&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Assign the value of x - 1 to x&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;built-in-constants&quot;&gt;Built-in Constants&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;None&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Absence of a value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;False&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;The bool type false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;True&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;The bool type true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;type&quot;&gt;Type&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;str()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Convert the string&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;int()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Convert the integer&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;float()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Convert the floating&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bool()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Convert the boolen&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;lists&quot;&gt;Lists&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l = list()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Assign an empty list to l&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l = [3,2]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Create list and assgn 3 and 2 to it&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l[0]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return the first value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l[-1]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return the last value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l[-4:]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return that last 4 items.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l[1:4]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return subset containing the second till  fourth values&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l[1::3]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return every third items starting from l[1]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l.append(1)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Append the value 1 to the end of l&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l+[1]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Append the value 1 to the end of l&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l.sort()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Sort l and replace original with it&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l.reverse()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Sort reversely the items in l&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l.remove(a)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Removes the first item equals to a.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l.pop(2)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Restun the second item and drop it from l&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[i for i in range(1,100) if i%2==0]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Generate list of even number between 1 and 100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l= [1, &quot;&quot;, 3]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Creat a list with missing value.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;dictionary&quot;&gt;Dictionary&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;d={&quot;weight&quot;:2.4, &quot;height&quot;:15}&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Creat a dictionary with keys “weight” and “height”, and their corresponding values of 2.4, 15&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;d[&quot;weight&quot;]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return values corrsponding “weight”&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;d.keys()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return the keys from d&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;d.values()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return the values from d&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;d.items()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return  (key, value) pairs from d&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;built-in-function&quot;&gt;Built-in function&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;len(x)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return the number of elements in x&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;min(x)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return the min of the values of x&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sum(x)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return the sum of the values of x&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;type(x)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return type of the values of x&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;range(3,10)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Generate a series of number from a number (3) to another number (10) with specific increment&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;user-function&quot;&gt;User Function&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;def name (argument):&lt;/code&gt; &lt;br /&gt;   &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;script&lt;/code&gt; &lt;br /&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;return output&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Create a function&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;name = lambda arguments: script&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Create one line function&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;if state1:&lt;/code&gt;&lt;br /&gt;  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;script1&lt;/code&gt; &lt;br /&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;elif x &amp;lt; 0:&lt;/code&gt;&lt;br /&gt;   &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;script2&lt;/code&gt; &lt;br /&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;else:&lt;/code&gt;&lt;br /&gt;   &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;script3&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Test state1 and state2, and run script corresponding to the correct statement, otherwise run script3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;iterates&quot;&gt;Iterates&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for value in obj:&lt;/code&gt;&lt;br /&gt;  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;script&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Iterate the code for each value in obj&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;while cond:&lt;/code&gt;&lt;br /&gt;   &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;script&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Run the code until reach to condion&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;boolean-comparisons&quot;&gt;Boolean Comparisons&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x == 2&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Test whether x is equal to 2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x != 2&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Test whether x is not equal to 2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x &amp;lt; 2&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Test whether x is less than 2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x &amp;lt;= 2&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Test whether x is less than or equal to 2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x &amp;gt; 2&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Test whether x is greater than 2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x &amp;gt;= 2&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Test whether x is greater than or equal to 2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(x == 2) or (y == 1)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Test whether x is equal to 5 or y is equal to 1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(x == 2) | (y == 1)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Test whether x is equal to 5 or y is equal to 1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(x == 2) and  (y == 1)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Test whether x is equal to 5 and y is equal to 1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(x == 2) &amp;amp; (y == 1)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Test whether x is equal to 5 and  y is equal to 1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3 in l&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Checks whether the value 3 exists in the  l&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;numpy&quot;&gt;Numpy&lt;/h1&gt;
+
+&lt;p&gt;Numpy (NUMerical PYthon) provides very useful arrays structure to work with data.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;import numpy as np&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pips install numpy&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3 -m pip install --upgrade  numpy&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;arrays&quot;&gt;Arrays&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.array([1,2,3])&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;One dimensional array&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.array([(1,2,3),(4,5,6)])&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Two dimensional array&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[i]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;The ith element&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[i:]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;The ith row&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[i][j]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;The ith and jth element, the same as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[i,j]&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.full((2,1),2.2)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;2x1 array with all values 2.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.linspace(0, 1, 10)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.eye(3)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;A diagonal array of size 3x3 (Identity matrix)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.zeros(3)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;An array of length 3 with all values 0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.ones((4,2))&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;An array of size 4x2 with all values 1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.arange(1,14,4)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;An 1D array from 1 to 14 with step 4&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;random&quot;&gt;Random&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.random.rand(4,2)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Generates a 4x2  array of random number from uniform&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.random.rand(4,2)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Generates a 4x2 array  of random number from standard normal&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.random.randint(low=1,high=20, size=(2,3))&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Generates a 2x3 array of random ints between 1–20&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.random.choice(arr,size=s,replace=True,p=pr)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Resamples of size s from arr acording probability pr&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;os&quot;&gt;O\S&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.savetxt('file.txt',arr,delimiter=' ')&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Writes to a text file&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.savetxt('file.csv',arr,delimiter=',')&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Writes to a CSV file&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.loadtxt('file.txt')&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Loads from a text file&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.genfromtxt('file.csv',delimiter=',')&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Loads from a CSV file&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.save('file_of_arr.npy ', arr)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Saves  array into a file&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.savez('file_of_arr.npz', arr1, arr2)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Saves  array into a file&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.load('my_array.npy')&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Loads arrays&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;inspecting-arrays&quot;&gt;Inspecting arrays&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.dtype&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns type of elements in array&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.size&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns number of elements in array&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;len(arr)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Length of array&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.shape&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns dimensions of arr&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.astype(dtype)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Convert arr elements to type dtype&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.tolist()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Convert arr to a Python list&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;sorting&quot;&gt;Sorting&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.sort()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Sort elements of arr&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.sort(axis=0)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Sorts elements of axis=0 of arr&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;reshaping&quot;&gt;Reshaping&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.reshape(4,3)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Reshapes arr to 4x3 without changing data&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.resize((4,3))&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Changes arr shape to 4x3 and fills new values with 0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.T&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Transposes arr&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;concatenate&quot;&gt;Concatenate&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.concatenate(arr1,arr2,axis=0)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;concatenate arr2 to arr1 along  the axis&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.hstack((arr1,arr2))&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Stack arrays horizontally (column wise)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.vstack((arr1,arr2))&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Stack arrays vertically (row wise)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;copying&quot;&gt;Copying&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr2 = arr1.view()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Create a view of the array with the same data&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.copy(arr)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Create a copy of aar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr2 = arr1.copy()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Create a deep copy of the array&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;addingremoving-elements&quot;&gt;Adding/Removing Elements&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.append(arr1,arr2)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Append arr2 to arr1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.insert(arr, 1, 10)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Insert 10 on index 1 items&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.delete(a,2)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Delete element on index 1 from array&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;indexing&quot;&gt;Indexing&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[2]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns the element at index 2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[2]=3&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Assigns 3 to the element on index 2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[2,3]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns the array element on index [2,3]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[2,3]=10&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Assigns 3 to the element on index [2,3]&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;slicing&quot;&gt;Slicing&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[:2]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns the elements at indices 0,1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[2:4]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns the elements at indices 2,3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[0:2,3]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns the elements on rows 0,1 at column 3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[:,1]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns the elements on column 2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[[1,2],[2,3]]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns the elements at indices [1,3] and [2,3]&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;subsetting&quot;&gt;Subsetting&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr&amp;lt;2&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns a boolen array, True for arr&amp;lt;2 and False for the rest&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(arr1&amp;lt;2) &amp;amp; (arr2&amp;gt;3)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns a boolen array, True for (arr1&amp;lt;3) &amp;amp; (arr2&amp;gt;5) and False for the rest&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[arr&amp;lt;2]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Select array with elements smaller than 2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[~(arr&amp;lt;2)]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Select array with elements not smaller than 2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;vector-math&quot;&gt;Vector Math&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.add(arr1,arr2)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Elementwise add arr2 to arr1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.subtract(arr1,arr2)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Elementwise subtract arr2 from arr1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.multiply(arr1,arr2)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Elementwise multiply arr1 by arr2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.divide(arr1,arr2)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Elementwise divide arr1 by arr2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.power(arr1,arr2)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Elementwise raise arr1 raised to the power of arr2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.array_equal(arr1,arr2)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns True if the arrays have the same elements and shape&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.sqrt(arr)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Square root of each element in the array&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.sin(arr)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Sine of each element in the array&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.log(arr)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Natural log of each element in the array&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.abs(arr)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Absolute value of each element in the array&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.ceil(arr)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Rounds up to the nearest int&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.floor(arr)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Rounds down to the nearest int&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.round(arr)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Rounds to the nearest int&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;aggregate-functions&quot;&gt;Aggregate Functions&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.min()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns minimum value of arr&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.max(axis=0)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns maximum value of specific axis&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.mean(arr,axis=0)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns mean of specific axis&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.median(arr,axis=0)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns median of  specific axis&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.sum()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns sum of arr&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.var(arr)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns the variance of array&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.std(arr,axis=1)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns the standard deviation of specific axis&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.quantile(arr,q=(q1,q2,..), axis=1)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns the (q1,q2, ….) quantiles of specific axis&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.corrcoef()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns correlation coefficient of array&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;pandas&quot;&gt;Pandas&lt;/h1&gt;
+
+&lt;p&gt;Pandas is built for working with data set.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;import pandas as pd&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pip3 install pandas&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3 -m pip install --upgrade  pandas&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;create-data-frame-and-series&quot;&gt;Create Data frame and series&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pd.DataFrame(matrix, column=)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Create data frame from matrix.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pd.DataFrame(dict)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Create data frame from a dict, keys would be used as the name of columns&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pd.Series(list)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Create a series from a list&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.index = pd.date_range('2000/1/1', periods=df.shape[0])&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Add a date index to the data frame&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;io&quot;&gt;I/O&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pd.read_csv(filename)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Load CSV file&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pd.read_table(filename)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Load from a delimited text file&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pd.read_excel(filename)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Load from an Excel file&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pd.read_sql(query, connection_object)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Load from a SQL table/database&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pd.read_json(json_string)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Load from Read JSON formatted file s&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pd.read_html(url)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Create a data from from an html URL&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pd.read_clipboard()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Create a data frame from  the contents of your clipboard&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.to_csv(filename)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Save df as  a CSV file&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.to_excel(filename)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Save df as an Excel file&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.to_sql(table_name, connection_object)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Save df to a SQL table&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.to_json(filename)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Save df as a file in JSON format&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;inspecting-arrays-1&quot;&gt;Inspecting arrays&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.dtype&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns type of elements in array&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.size&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns number of elements in array&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;len(arr)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Length of array&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.shape&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns dimensions of arr&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.astype(dtype)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Convert arr elements to type dtype&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.tolist()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Convert arr to a Python list&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.value_counts(dropna=False)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;View unique values and counts&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.head(l)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return the first l rows of the DataFrame&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.tail(l)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return  the last l rows of the DataFrame&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.shape&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return the number of rows and columns&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.info()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return index, datatype, and memory information&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.describe()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return the summary statistics of numerical columns&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;sorting-1&quot;&gt;Sorting&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.sort_values(col)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Sort data frame values by col in ascending order&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.sort_values(col,ascending=False)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Sort data frame values by col in descending order&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.sort_values([col1,col2],ascending=[True,False])&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;data frame values by col1 in ascending order then col2 in descending order&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;addingremoving-elements-1&quot;&gt;Adding/Removing Elements&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.columns = ['name1','name2']&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Add new name to  columns&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.rename(columns={'old_name': 'new_ name'})&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Rename columns&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.set_index('colu')&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Change the index to the given column&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;s.replace([1,2],['two','one'])&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Replace 1 and 2 with  ‘two’ and ‘one’, respectively&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;missing&quot;&gt;Missing&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pd.isnull()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Find the null values, True for the null&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pd.notnull()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Opposite to  pd.isnull()&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.dropna()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Drop all rows that contain null values&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.dropna(axis=1)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Drop all columns that contain null values&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.dropna(axis=1,thresh=n)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Keep only the column with at least n non null values&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.fillna(x)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Replace all null values with x&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.fillna([‘A’:0,‘B’:0])&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Replace all null values in column ‘A’, and ‘B’, with 0, 1 respectively.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;s.fillna(s.mean())&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Replace all null values with the mean or any other statistics you define&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;indexing-1&quot;&gt;Indexing&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df[col]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns column with label col as Series&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df[[col1, col2]]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns columns corresponding  col1, col2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.iloc[i,:]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;The (i-1)th row&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.iloc[i,j]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;The (i-1)th and (j-1)th element&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;s.iloc[i]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return elements in position (i-1) by position&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;s.loc['index']&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return elements correspondingthe index&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;subsetting-1&quot;&gt;Subsetting&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df[df[col] &amp;lt; 1]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return element less than 1 in column col&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df[(df[col] &amp;gt; 0.5) &amp;amp; (df[col] &amp;lt; 1)]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Return 0.5&amp;lt; element &amp;lt; 1 in column col&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;group-by&quot;&gt;Group by&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.groupby(col)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Group data frame based on col.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.groupby(col).mean()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Calculate mean after grouping based on col.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.groupby(col1).agg(fun)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Group the data frame based on col and run function on it.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.pivot_table(index=col1,values=[col2,col3],aggfunc=mean)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Create a pivot table using index of col1 and calculates the mean (or any other function) of col2 and col3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;apply&quot;&gt;Apply&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.apply(fun)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Apply the function fun across each column&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.apply(np.max,axis=1)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Apply the function fun across each row&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;joincombine&quot;&gt;Join/Combine&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df1.append(df2)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Add the rows in df1 to the end of df2 (columns should be identical)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pd.concat([df1, df2],axis=1)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Add the columns in df1 to the end of df2 (rows index should be identical)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;aggregate-functions-1&quot;&gt;Aggregate Functions&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.describe()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Summary statistics for numerical columns&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.count()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns the number of non-null values in each DataFrame column&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.min()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns the minimum in each column&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.max()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns the maximum in each column&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.mean()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns the mean in each column&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.median()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns the median in each column&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.std()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns the standard deviation in each column&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.corr()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Returns the correlation between columns&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;#contents&quot;&gt;⬆ back to top&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;[sw] https://swcarpentry.github.io/sql-novice-survey/ &lt;br /&gt;
+[dpo] https://docs.python.org/3.7/library/sqlite3.html &lt;br /&gt;
+[sw2] https://swcarpentry.github.io/sql-novice-survey/10-prog/index.html &lt;br /&gt;
+[gc] https://github.com/CoreyMSchafer/code_snippets/tree/master/Python-SQLite &lt;br /&gt;
+[dor] https://datacarpentry.org/R-ecology-lesson/05-r-and-databases.html &lt;br /&gt;
+[wdc] https://www.datacamp.com/community/tutorials/sqlite-in-r &lt;br /&gt;
+[sw3] https://swcarpentry.github.io/sql-novice-survey/11-prog-R/index.html &lt;br /&gt;
+[w3]  https://www.w3schools.com/sql/sql_create_table.asp &lt;br /&gt;
+[wt] https://www.techonthenet.com/sql/index.php &lt;br /&gt;
+[qlt] https://www.sqlitetutorial.net &lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;license&quot;&gt;License&lt;/h3&gt;
+&lt;p&gt;Copyright (c) 2019 Saeid Amiri and Leila Alimehr&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>SQL At A Glance</title>
+   <link href="http://saeidamiri1.github.io/2019/10/SQL-At-A-Glance.html"/>
+   <updated>2019-10-05T00:00:00-04:00</updated>
+   <id>http://saeidamiri1.github.io/2019/10/SQL-At-A-Glance</id>
+   <content type="html">&lt;h1 id=&quot;sql-at-a-glance&quot;&gt;SQL At A Glance&lt;/h1&gt;
+&lt;p&gt;This text is a self-study to learn how use SQL to work with the databases.&lt;/p&gt;
+
+&lt;h2 id=&quot;contents&quot;&gt;Contents&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#introduction&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#premier&quot;&gt;Premier&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#Open-Database&quot;&gt;Open Database&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#challenge-1&quot;&gt;Challenge 1&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#create-database&quot;&gt;Create Database&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#challenge-2&quot;&gt;Challenge 2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#selecting-data&quot;&gt;Selecting Data&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#challenge-3&quot;&gt;Challenge 3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#add,-delete,-remove&quot;&gt;Add, Delete, Remove&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#challenge-4&quot;&gt;Challenge 4&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#sorting-and-removing-duplicates&quot;&gt;Sorting and Removing Duplicates&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#challenge-5&quot;&gt;Challenge 5&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#filtering&quot;&gt;Filtering&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#challenge-6&quot;&gt;Challenge 6&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#calculation-on-variable&quot;&gt;Calculation on variable&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#challenge-7&quot;&gt;Challenge 7&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#combining-variables&quot;&gt;Combining variables&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#challenge-8&quot;&gt;Challenge 8&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#missing-data&quot;&gt;Missing Data&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#challenge-9&quot;&gt;Challenge 9&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#aggregation&quot;&gt;Aggregation&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#challenge-10&quot;&gt;Challenge 10&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#combining-Data&quot;&gt;Combining Data&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#challenge-11&quot;&gt;Challenge 11&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#output-file&quot;&gt;Output file&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#challenge-12&quot;&gt;Challenge 12&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#sql-in-r&quot;&gt;SQL in R&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#sql-in-python&quot;&gt;SQL in Python&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#references&quot;&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Data can be stored in different formats and each software has own structures. Since the data should be handled with different softwares, there are few options that most data scientists use for storing data: text-file, spreadsheet, and database. The database is very good for big and complex dataset. One of best way working with database is to use the Structured Query Language (SQL) which allows work with database through queries. There are several softwares designed for working with SQL, e.g., mysql, postgresql, MS Access, and MS SQL Server. Here we use sqlite3 which is a lightweight database software written in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;C&lt;/code&gt; that does not need a server. It runs on the terminal, although there are a couple of database softwares (e.g., DB Browser for SQLite) that functionally work with sqlite3. SQLite commend also can be run from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Python&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;R&lt;/code&gt;. &lt;br /&gt;   To fix definition for the rest of this note; the database is a file that stores related tables, the table includes rows and columns. Often the column is referred to as variable or fields and the row as observation and records. &lt;br /&gt;   This text has three companions; 1)&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;practice.db&lt;/code&gt; that is a fake database for the practice, 2)&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Challenge&lt;/code&gt;, after each section, we provide a challenge which include questions related to the section and readers can test their learning. We also added the correct solutions.  3)&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;survey.db&lt;/code&gt; it is a database used in [sw], we use it for the challenge part.&lt;/p&gt;
+
+&lt;h2 id=&quot;premier&quot;&gt;Premier&lt;/h2&gt;
+&lt;p&gt;After installing sqlites, type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sqlite3&lt;/code&gt; in terminal to get into the software:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Last login: Fri Sep  6 17:12:01 on ttys000
+SAM-MacBook:~ user1$ sqlite3
+SQLite version 3.24.0 2018-06-04 14:10:15
+Enter &quot;.help&quot; for usage hints.
+Connected to a transient in-memory database.
+Use &quot;.open FILENAME&quot; to reopen on a persistent database.
+sqlite&amp;gt;
+sqlite&amp;gt; .quit
+SAM-MacBook:~ user1$  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;To quit sqlites type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.quit&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;open-database&quot;&gt;Open Database&lt;/h2&gt;
+&lt;p&gt;In this self-study text, we used simple database called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;practice.db&lt;/code&gt; to describe sqlite3. In order to load the database, type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sqlite3 name_of_database&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SAM-MacBook:~ user1$ sqlite3 practice.db
+SQLite version 3.24.0 2018-06-04 14:10:15
+Enter &quot;.help&quot; for usage hints.
+sqlite&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To load a database from inside sqlite3, type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.open name_of_database&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sqlite&amp;gt; .open  practice.db
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To see the list of tables type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.tables&lt;/code&gt;, more detail of tables can be obtained using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.schema&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sqlite&amp;gt; .tables
+employees  expenses   
+sqlite&amp;gt; .schema
+CREATE TABLE expenses (id INTEGER, food_expense DECIMAL, automobile_expense DECIMAL, travel_expense DECIMAL, date DATE);
+CREATE TABLE employees (id INTEGER, name TEXT, family TEXT);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It shows the database has two tables,&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;expenses: the expenses of trip done by employees.&lt;br /&gt; &lt;br /&gt;
+  &lt;img src=&quot;https://raw.githubusercontent.com/saeidamiri1/SQL/master/image/employee.png&quot; width=&quot;160&quot; height=&quot;100&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;employees: the list of employees in a company.&lt;br /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/saeidamiri1/SQL/master/image/expenses.png&quot; width=&quot;290&quot; height=&quot;100&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tables in the database are often related to each other using a unique identifier, which often called key. The identifiers store in a key column or common columns. For the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;practice.db&lt;/code&gt; database, the employee &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt; does this role.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;--challenge-1&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;  Challenge 1&lt;/span&gt;&lt;/h4&gt;
+&lt;p&gt;Go to &lt;a href=&quot;https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-1&quot;&gt;Challenge 1&lt;/a&gt; and answer the questions.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;create-database&quot;&gt;Create Database&lt;/h2&gt;
+&lt;p&gt;As mentioned a collection of tables constructs a database, to create a table type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CREATE TABLE NAME_OF _TABLES(VARIABLES)&lt;/code&gt;.  The following script shows how to create a table &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Newemployew&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CREATE TABLE Newemployee(id integer, name text, family text, contract text);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;It has four columns &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(id, personal, family, contract)&lt;/code&gt;,  except &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt; the rests have the text format.&lt;br /&gt;
+The columns in table can have different formats, see &lt;a href=&quot;https://www.sqlite.org&quot;&gt;www.sqlite.org&lt;/a&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+      &lt;th&gt;More details&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;INTEGER&lt;/td&gt;
+      &lt;td&gt;integer&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;REAL&lt;/td&gt;
+      &lt;td&gt;a floating point number&lt;/td&gt;
+      &lt;td&gt;REAL,DOUBLE,DOUBLE PRECISION, FLOAT&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;NUMERIC&lt;/td&gt;
+      &lt;td&gt;numberic can be broad see&lt;/td&gt;
+      &lt;td&gt;NUMERIC,DECIMAL(10,5),BOOLEAN,DATE,DATETIME&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TEXT&lt;/td&gt;
+      &lt;td&gt;string&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;NULL&lt;/td&gt;
+      &lt;td&gt;the Null values&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;BLOB&lt;/td&gt;
+      &lt;td&gt;Binary Large OBject&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;-challenge-2-&quot;&gt;&lt;span style=&quot;color:red&quot;&gt; Challenge 2 &lt;/span&gt;&lt;/h4&gt;
+&lt;p&gt;Go to &lt;a href=&quot;https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-2&quot;&gt;Challenge 2&lt;/a&gt;  and answer the questions.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;selecting-data&quot;&gt;Selecting Data&lt;/h2&gt;
+&lt;p&gt;To see the records of table, type
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SELECT names_of_variables FROM Name_of_table;&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT family, id FROM employees;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To have a tidy display in sqlite3, type the following codes.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.mode column
+.header on
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;--challenge-3-&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;  Challenge 3 &lt;/span&gt;&lt;/h4&gt;
+&lt;p&gt;Go to &lt;a href=&quot;https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-3&quot;&gt;Challenge 3&lt;/a&gt; and answer the questions.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;add-delete-remove&quot;&gt;Add, Delete, Remove&lt;/h2&gt;
+&lt;p&gt;Once a table is created, one can add, change, and remove the recodes using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;INSERT&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UPDATE&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DELETE&lt;/code&gt;, respectively.
+You can insert directly the records into the table;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;INSERT INTO TB(Col1, Col2, ...) VALUES(Val1, Val2, ...)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;where the values of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(Val1, Val2, ...)&lt;/code&gt; are inserted in the  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(Col1, Col2, ...)&lt;/code&gt;. If you are adding to all the columns, drop the name of table.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;INSERT INTO employees VALUES(1752,'ALex','Nickson');
+INSERT INTO employees(id,name,family) VALUES(1752,'ALex','Nickson');
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The records can be inserted from other table:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CREATE TABLE employees_b(name TEXT, family TEXT);
+INSERT INTO  employees_b SELECT name, family FROM employees;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The following simple code shows how to modify an existing record:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;UPDATE employees SET id=7152 WHERE name='ALex';
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;So the general format of  update is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UPDATE TB SET Col1=Val1, Col1=Val1,...,  WHERE condition&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;By specifying the record, one can drop it from table:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;DELETE FROM employees WHERE id=7152;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To drop table, just type names of tables after &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DROP TABLE&lt;/code&gt;, the following script drops the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Survey&lt;/code&gt; table,&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;DROP TABLE Newemployee;
+DROP TABLE employees_b;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;--challenge-4-&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;  Challenge 4 &lt;/span&gt;&lt;/h4&gt;
+&lt;p&gt;Go to &lt;a href=&quot;https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-4&quot;&gt;Challenge 4&lt;/a&gt;  and answer the questions.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;sorting-and-removing-duplicates&quot;&gt;Sorting and Removing Duplicates&lt;/h2&gt;
+&lt;p&gt;To remove the duplicate, add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DISTINCT&lt;/code&gt; in front the column name&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT DISTINCT family FROM employees;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In order to sort, add an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ORDER BY&lt;/code&gt; clause to the query.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT * FROM employees ORDER BY id;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The default of ordering is the ascending order, to sort in the opposite order, add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DESC&lt;/code&gt;. The following query shows how add multiple orders with different requests:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT id, travel_expense, automobile_expense, food_expense FROM expenses ORDER BY id DESC, travel_expense ASC ;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;--challenge-5-&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;  Challenge 5 &lt;/span&gt;&lt;/h4&gt;
+&lt;p&gt;Go to &lt;a href=&quot;https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-5&quot;&gt;Challenge 5&lt;/a&gt;  and answer the questions.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;filtering&quot;&gt;Filtering&lt;/h2&gt;
+&lt;p&gt;To select the records for a give criterion, add the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WHERE&lt;/code&gt; clause with the record of interest.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT * FROM expenses WHERE id=1167;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;By using  Logical &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AND&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OR&lt;/code&gt; can add more criteria,&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT * FROM expenses WHERE id=5766 AND travel_expense &amp;lt; 2000;
+SELECT * FROM expenses WHERE id=5766 OR id=1167;
+SELECT * FROM employees WHERE family IN ('Amiri', 'Alimehr');
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Filtering can be done using particular criteria, apply the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LIKE&lt;/code&gt; clause. The following query selects records in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;family&lt;/code&gt; where they  start with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT * FROM employees WHERE family LIKE 'A%';
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Different combination of them can also be used; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;%A&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;%A%&lt;/code&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;-challenge-6-&quot;&gt;&lt;span style=&quot;color:red&quot;&gt; Challenge 6 &lt;/span&gt;&lt;/h4&gt;
+&lt;p&gt;Go to &lt;a href=&quot;https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-6&quot;&gt;Challenge 6&lt;/a&gt; and answer the questions.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;calculation-on-variable&quot;&gt;Calculation on variable&lt;/h2&gt;
+&lt;p&gt;Simple arithmetic can be done in sqlite3 as well,&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT 4+2;
+SELECT 4-2;
+SELECT 4+2, 4-2;
+SELECT 4*2;
+SELECT 4/2;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Calculation can be done on the selected variables.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT 1.02*travel_expense FROM expenses WHERE automobile_expense&amp;lt;200;
+SELECT travel_expense, round(4*(travel_expense-100)/8,2) FROM expenses WHERE id IN (1167, 5766);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;-challenge-7-&quot;&gt;&lt;span style=&quot;color:red&quot;&gt; Challenge 7 &lt;/span&gt;&lt;/h4&gt;
+&lt;p&gt;Go to &lt;a href=&quot;https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-7&quot;&gt;Challenge 7&lt;/a&gt;  and answer the questions.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;combining-variables&quot;&gt;Combining variables&lt;/h2&gt;
+&lt;p&gt;One can combine variables using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;||&lt;/code&gt;,&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT name || family FROM employees;
+SELECT name || ' ' || family FROM employees;
+SELECT family || ', ' || name FROM employees;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you want to combine the output of two queries use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UNION&lt;/code&gt; clause between them.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT * FROM employees WHERE name='Saeid' UNION SELECT * FROM employees WHERE name='Leila';
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The UNION drops the duplicate, and actually run DISTINCT on it as default. If there is not a duplicate in output of two query, use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UNION ALL&lt;/code&gt; which is faster than UNION.&lt;/p&gt;
+
+&lt;p&gt;To clean identifier, one can use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;substr(variable, s, l)&lt;/code&gt;, it cuts record from starting point &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;s&lt;/code&gt; for length &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT DISTINCT substr(id, 1, 3) AS Majoremployee FROM employees;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;--challenge-8-&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;  Challenge 8 &lt;/span&gt;&lt;/h4&gt;
+&lt;p&gt;Go to &lt;a href=&quot;https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-8&quot;&gt;Challenge 8&lt;/a&gt; and answer the questions.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;missing-data&quot;&gt;Missing Data&lt;/h2&gt;
+&lt;p&gt;Missing, empthy, or NULL is part of database, SQL easily handle missing,&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT * FROM expenses WHERE id IS NULL;
+SELECT * FROM expenses WHERE id IS NOT NULL;
+SELECT * FROM expenses WHERE id = 8418 AND travel_expense IS NULL;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;-challenge-9-&quot;&gt;&lt;span style=&quot;color:red&quot;&gt; Challenge 9 &lt;/span&gt;&lt;/h4&gt;
+&lt;p&gt;Go to &lt;a href=&quot;https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-9&quot;&gt;Challenge 9&lt;/a&gt;  and answer the questions.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;aggregation&quot;&gt;Aggregation&lt;/h2&gt;
+&lt;p&gt;You can retrieves the Statistical summary of variable for other variables, the following scripts generate mean and min of variable reading.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT avg(travel_expense) FROM expenses;
+SELECT avg(travel_expense) FROM expenses WHERE id = 8418;
+SELECT min(travel_expense) FROM expenses WHERE id = 8418;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Sometimes should find a summary statistics of variable for  another variables&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT id, count(*) FROM expenses  WHERE  id = 8418 AND travel_expense &amp;lt;= 2000;
+SELECT id, count(*),max(travel_expense), sum(travel_expense) FROM expenses;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;-challenge-10-&quot;&gt;&lt;span style=&quot;color:red&quot;&gt; Challenge 10 &lt;/span&gt;&lt;/h4&gt;
+&lt;p&gt;Go to &lt;a href=&quot;https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-10&quot;&gt;Challenge 10&lt;/a&gt;  and answer the questions.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;combining-data&quot;&gt;Combining Data&lt;/h2&gt;
+&lt;p&gt;Using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JOIN&lt;/code&gt; clause can creates the cross product of two tables.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT * FROM employees JOIN expenses;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In order to  match the data with an index in both dataset, use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WHERE&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ON&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT * FROM employees JOIN expenses WHERE employees.id = expenses.id;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can select&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT employees.name, employees.family, expenses.travel_expense
+FROM   employees JOIN expenses
+ON     employees.id = expenses.id;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT employees.name, employees.family, expenses.travel_expense
+FROM   employees JOIN expenses
+ON     employees.id = expenses.id
+AND    expenses.travel_expense IS NOT NULL
+AND    expenses.travel_expense !=0;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;-challenge-11-&quot;&gt;&lt;span style=&quot;color:red&quot;&gt; Challenge 11 &lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Go to &lt;a href=&quot;https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-11&quot;&gt;Challenge 11&lt;/a&gt;  and answer the questions.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;output-file&quot;&gt;Output file&lt;/h2&gt;
+&lt;p&gt;The tables can be saved in the standard format. SQL has several arguments to save file with a correct formant, .header, .mode, .separator.   The name of output file can be written in front .once and  .output.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.header on
+.mode csv
+.separator ,
+.once dataout.csv
+SELECT * FROM employees;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.mode csv
+.output data.csv
+SELECT * from expenses;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The table saved in can be imported to sql&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.mode csv
+.import dataout.csv id
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To see the output as temporary file out of terminal, type&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.output '|open -f'
+SELECT * from employees;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.excel
+SELECT * from employees;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Once the operations done, you can save it or create a new database using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.save file.bd&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.save  practic_new.db;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;--challenge-12-&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;  Challenge 12 &lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Go to &lt;a href=&quot;https://github.com/saeidamiri1/SQL/blob/master/challenges.md\#challenge-12&quot;&gt;Challenge 12&lt;/a&gt;  and answer the questions.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+&lt;h2 id=&quot;sql-in-python&quot;&gt;SQL in Python&lt;/h2&gt;
+&lt;p&gt;In order to work with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sqlite3&lt;/code&gt; in Python you need to import the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;import sqlite3&lt;/code&gt;. You don’t need to install sqlite3 module, because it is standard library.  To jump in, run the following codes:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import sqlite3
+conn = sqlite3.connect(&quot;Practice.db&quot;)
+cc = conn.cursor()
+cc.execute(&quot;SELECT family, name FROM employees;&quot;)
+results = cc.fetchall()
+results
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The first line load the module, the second line establishes a connection to database.
+The third line creates a cursor, it keep track of where we are in the database.
+Line 4 executes the query in sqlite and finally the commend &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cursor.fetchall()&lt;/code&gt; brings them to Python.
+The result is stored as list in Python and can work on data in Python. Any query we learned can be done inside &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cursor.execute()&lt;/code&gt;.
+Once the data is brought, you should disconnect Python&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cursor.close()
+conn.close()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;You can find more in [dpo], [sw2], and [qc].&lt;/p&gt;
+
+&lt;h2 id=&quot;sql-in-r&quot;&gt;SQL in R&lt;/h2&gt;
+&lt;p&gt;In order to run a query inside the R’s code, you need to load &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;library(RSQLite)&lt;/code&gt;, the following lines show: 1) load R’s Library, 2) connect to database, and 3) executing the query.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;library(RSQLite)
+conn &amp;lt;- dbConnect(SQLite(), &quot;practice.db&quot;)
+results  &amp;lt;- dbGetQuery(conn, &quot;SELECT family, name FROM employees;&quot;)
+results
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The result of running query is store as data.frame in R. Once running the query is done, disconnect it; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dbDisconnect(connection)&lt;/code&gt;. Good references for working with sqlite in R are [wdc], [dor], and [sw3].&lt;/p&gt;
+
+&lt;p&gt;RStudio provides an editor for working with Sqlite, which is accessible using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;File&amp;gt;New File&amp;gt; SQL Script&lt;/code&gt;, so the discussed queries can be run from RStudio. R has a few libraries that are built to work professionally with the database; &lt;a href=&quot;https://db.rstudio.com/dbi&quot;&gt;DBI&lt;/a&gt; provides a database interface, &lt;a href=&quot;https://db.rstudio.com/dplyr&quot;&gt;dbplyr&lt;/a&gt; is an extension of dplyr to work with database, &lt;a href=&quot;https://db.rstudio.com/odbc&quot;&gt;odbc&lt;/a&gt; which is a database interface to Open Database Connectivity (ODBC). A complete list of packages built for working with R can be found in &lt;a href=&quot;https://db.rstudio.com/&quot;&gt;Databases using R&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;more-reading&quot;&gt;More reading&lt;/h2&gt;
+&lt;p&gt;There are several online websites for learning Sqlites, we can suggest [w3], [wt], and [qlt].&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;#contents&quot;&gt;⬆ back to top&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;[sw] https://swcarpentry.github.io/sql-novice-survey/ &lt;br /&gt;
+[dpo]  https://docs.python.org/3.7/library/sqlite3.html &lt;br /&gt;
+[sw2] https://swcarpentry.github.io/sql-novice-survey/10-prog/index.html &lt;br /&gt;
+[gc]  https://github.com/CoreyMSchafer/code_snippets/tree/master/Python-SQLite &lt;br /&gt;
+[dor] https://datacarpentry.org/R-ecology-lesson/05-r-and-databases.html &lt;br /&gt;
+[wdc] https://www.datacamp.com/community/tutorials/sqlite-in-r &lt;br /&gt;
+[sw3] https://swcarpentry.github.io/sql-novice-survey/11-prog-R/index.html &lt;br /&gt;
+[w3] https://www.w3schools.com/sql/sql_create_table.asp &lt;br /&gt;
+[wt]https://www.techonthenet.com/sql/index.php &lt;br /&gt;
+[qlt]https://www.sqlitetutorial.net/&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;license&quot;&gt;License&lt;/h3&gt;
+&lt;p&gt;Copyright (c) 2019 Saeid Amiri and Leila Alimehr&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Cheatsheet for R, Python, and Matlab</title>
+   <link href="http://saeidamiri1.github.io/2019/05/R-Python-Matlab.html"/>
+   <updated>2019-05-08T00:00:00-04:00</updated>
+   <id>http://saeidamiri1.github.io/2019/05/R-Python-Matlab</id>
+   <content type="html">&lt;h1 id=&quot;r-python-matlab-basics&quot;&gt;R-Python-Matlab (Basics)&lt;/h1&gt;
+&lt;p&gt;A brief cheatsheet for those who use R daily, and use other script programing languages, Python and Matlab, occasionally.&lt;/p&gt;
+
+&lt;h2 id=&quot;contents&quot;&gt;Contents&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#arithmetic-operators&quot;&gt;Arithmetic Operators&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#basic-function&quot;&gt;Basic function&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#function&quot;&gt;Function&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#round&quot;&gt;Round&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#trigonometry&quot;&gt;Trigonometry&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#logical-operators&quot;&gt;Logical Operators&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#data-structure&quot;&gt;Data structure&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#data-frame&quot;&gt;Data frame&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#finding&quot;&gt;Finding&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#missing&quot;&gt;Missing&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#Set-operator&quot;&gt;Set operator&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#conditional-operator&quot;&gt;Conditional operator&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#loop&quot;&gt;Loop&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#summary-statistics&quot;&gt;Summary statistics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#random-number&quot;&gt;Random Number&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#sequences&quot;&gt;Sequences&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#repeating&quot;&gt;Repeating&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#working-directory&quot;&gt;Working directory&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;arithmetic-operators&quot;&gt;Arithmetic Operators&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;R&lt;/th&gt;
+      &lt;th&gt;Python&lt;/th&gt;
+      &lt;th&gt;Matlab&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;x&amp;lt;-c &lt;br /&gt; x=c&lt;/td&gt;
+      &lt;td&gt;x=c&lt;/td&gt;
+      &lt;td&gt;x=c&lt;/td&gt;
+      &lt;td&gt;define x and assign c to it&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;x+y&lt;/td&gt;
+      &lt;td&gt;x+y&lt;/td&gt;
+      &lt;td&gt;x+y&lt;/td&gt;
+      &lt;td&gt;addition&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;x-y&lt;/td&gt;
+      &lt;td&gt;x-y&lt;/td&gt;
+      &lt;td&gt;x-y&lt;/td&gt;
+      &lt;td&gt;subtraction&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;x*y&lt;/td&gt;
+      &lt;td&gt;x*y&lt;/td&gt;
+      &lt;td&gt;x*y&lt;/td&gt;
+      &lt;td&gt;multiplication&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;x/y&lt;/td&gt;
+      &lt;td&gt;x/y&lt;/td&gt;
+      &lt;td&gt;x/y&lt;/td&gt;
+      &lt;td&gt;division&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;x^y&lt;/td&gt;
+      &lt;td&gt;x**y&lt;/td&gt;
+      &lt;td&gt;x.^y&lt;/td&gt;
+      &lt;td&gt;power&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;x%/%y&lt;/td&gt;
+      &lt;td&gt;x%y&lt;/td&gt;
+      &lt;td&gt;rem(x,y)&lt;/td&gt;
+      &lt;td&gt;Reminder&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;basic-function&quot;&gt;Basic function&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;R&lt;/th&gt;
+      &lt;th&gt;Python&lt;/th&gt;
+      &lt;th&gt;Matlab&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;sqrt(x)&lt;/td&gt;
+      &lt;td&gt;math.sqrt(x)&lt;/td&gt;
+      &lt;td&gt;sqrt(x)&lt;/td&gt;
+      &lt;td&gt;square root&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;log(x)&lt;/td&gt;
+      &lt;td&gt;math.log(x)&lt;/td&gt;
+      &lt;td&gt;log(x)&lt;/td&gt;
+      &lt;td&gt;logarithm base e&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;log10(x)&lt;/td&gt;
+      &lt;td&gt;math.log10(x)&lt;/td&gt;
+      &lt;td&gt;log10()&lt;/td&gt;
+      &lt;td&gt;logarithm base 10&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;exp(x)&lt;/td&gt;
+      &lt;td&gt;math.exp(x)&lt;/td&gt;
+      &lt;td&gt;exp(x)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;function&quot;&gt;Function&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;R&lt;/th&gt;
+      &lt;th&gt;Python&lt;/th&gt;
+      &lt;th&gt;Matlab&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;name&amp;lt;-function(arguments){&lt;br /&gt;  script &lt;br /&gt;return(output)&lt;br /&gt;}&lt;/td&gt;
+      &lt;td&gt;def name (arguments):&lt;br /&gt;    script&lt;br /&gt;     return output&lt;/td&gt;
+      &lt;td&gt;function [returns]=name(argument):&lt;br /&gt;    script&lt;br /&gt;    returns=output&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;round&quot;&gt;Round&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;R&lt;/th&gt;
+      &lt;th&gt;Python&lt;/th&gt;
+      &lt;th&gt;Matlab&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;round()&lt;/td&gt;
+      &lt;td&gt;round()&lt;/td&gt;
+      &lt;td&gt;round()&lt;/td&gt;
+      &lt;td&gt;round&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ceil()&lt;/td&gt;
+      &lt;td&gt;math.ceil()&lt;/td&gt;
+      &lt;td&gt;ceil()&lt;/td&gt;
+      &lt;td&gt;round up&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;floor()&lt;/td&gt;
+      &lt;td&gt;math.floor()&lt;/td&gt;
+      &lt;td&gt;floor()&lt;/td&gt;
+      &lt;td&gt;round down&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;trigonometry&quot;&gt;Trigonometry&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;R&lt;/th&gt;
+      &lt;th&gt;Python&lt;/th&gt;
+      &lt;th&gt;Matlab&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;sin(x)&lt;/td&gt;
+      &lt;td&gt;math.sin(x)&lt;/td&gt;
+      &lt;td&gt;sin(x)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;asin(x)&lt;/td&gt;
+      &lt;td&gt;math.asin(x)&lt;/td&gt;
+      &lt;td&gt;asin(x)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;logical-operators&quot;&gt;Logical Operators&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;R&lt;/th&gt;
+      &lt;th&gt;Python&lt;/th&gt;
+      &lt;th&gt;Matlab&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;FALSE&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TRUE&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;true&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;a &amp;amp; b&lt;/td&gt;
+      &lt;td&gt;a &amp;amp; b&lt;/td&gt;
+      &lt;td&gt;a &amp;amp; b&lt;/td&gt;
+      &lt;td&gt;AND&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;a|b&lt;/td&gt;
+      &lt;td&gt;a|b&lt;/td&gt;
+      &lt;td&gt;a|b&lt;/td&gt;
+      &lt;td&gt;OR&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;!a&lt;/td&gt;
+      &lt;td&gt;not a&lt;/td&gt;
+      &lt;td&gt;~a&lt;/td&gt;
+      &lt;td&gt;Not&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;xor(a,b)&lt;/td&gt;
+      &lt;td&gt;a!=b&lt;/td&gt;
+      &lt;td&gt;xor(a,b)&lt;/td&gt;
+      &lt;td&gt;Logical exclusive OR&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;x&amp;amp;&amp;amp;y&lt;/td&gt;
+      &lt;td&gt;and&lt;/td&gt;
+      &lt;td&gt;x&amp;amp;&amp;amp;y&lt;/td&gt;
+      &lt;td&gt;Short-circuit FALSE&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;||&lt;/td&gt;
+      &lt;td&gt;or&lt;/td&gt;
+      &lt;td&gt;||&lt;/td&gt;
+      &lt;td&gt;Short-circuit TRUE&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;any(x,y)&lt;/td&gt;
+      &lt;td&gt;any([x,y])&lt;/td&gt;
+      &lt;td&gt;any(x,y)&lt;/td&gt;
+      &lt;td&gt;TRUE if any element is TRUE&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;all(a,b)&lt;/td&gt;
+      &lt;td&gt;all([x,y])&lt;/td&gt;
+      &lt;td&gt;all(x,y)&lt;/td&gt;
+      &lt;td&gt;TRUE if all element is TRUE&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;data-structure&quot;&gt;Data structure&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;R&lt;/th&gt;
+      &lt;th&gt;Python&lt;/th&gt;
+      &lt;th&gt;Matlab&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;vec=c(x,y,z)&lt;/td&gt;
+      &lt;td&gt;vec=np.array([[x, y, z]])&lt;/td&gt;
+      &lt;td&gt;vec=[x y z]&lt;/td&gt;
+      &lt;td&gt;vector&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;vec[i]&lt;/td&gt;
+      &lt;td&gt;vec[i]&lt;/td&gt;
+      &lt;td&gt;cev(i)&lt;/td&gt;
+      &lt;td&gt;call the ith  element&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;t(c(x,y,z))&lt;/td&gt;
+      &lt;td&gt;np.array([[x, y, z]]).T&lt;/td&gt;
+      &lt;td&gt;[x y z]’&lt;/td&gt;
+      &lt;td&gt;transpose of vector&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mat=matrix(c(x,y,z,w),ncol=2)&lt;/td&gt;
+      &lt;td&gt;mat=np.array([[x, y], [z,w]])&lt;/td&gt;
+      &lt;td&gt;mat=[x y, z w]&lt;/td&gt;
+      &lt;td&gt;matrix&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;matrix(0,x,y)&lt;/td&gt;
+      &lt;td&gt;zeros(x,y)&lt;/td&gt;
+      &lt;td&gt;zeros(x,y)&lt;/td&gt;
+      &lt;td&gt;Zero x*y matrix&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;dim(mat)&lt;/td&gt;
+      &lt;td&gt;mat.shape&lt;/td&gt;
+      &lt;td&gt;size(mat)&lt;/td&gt;
+      &lt;td&gt;size of matrix&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;diag(x)&lt;/td&gt;
+      &lt;td&gt;np.diag(x)&lt;/td&gt;
+      &lt;td&gt;diag(x)&lt;/td&gt;
+      &lt;td&gt;diagonal matrix&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mat[i,]&lt;/td&gt;
+      &lt;td&gt;mat[i-1,]&lt;/td&gt;
+      &lt;td&gt;mat(i,:)&lt;/td&gt;
+      &lt;td&gt;call the ith  row&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mat[,j]&lt;/td&gt;
+      &lt;td&gt;mat[,j-1]&lt;/td&gt;
+      &lt;td&gt;mat(:,j)&lt;/td&gt;
+      &lt;td&gt;call the ith  column&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;rbind(mat1,mat2)&lt;/td&gt;
+      &lt;td&gt;np.concatenate(mat1,mat2,axis=0)&lt;/td&gt;
+      &lt;td&gt;[mat1;mat2]&lt;/td&gt;
+      &lt;td&gt;combine by row&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cbind(mat1,mat2)&lt;/td&gt;
+      &lt;td&gt;np.concatenate(mat1,mat2,axis=1)&lt;/td&gt;
+      &lt;td&gt;[mat1,mat2]&lt;/td&gt;
+      &lt;td&gt;combine by column&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;data-frame&quot;&gt;Data frame&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;R&lt;/th&gt;
+      &lt;th&gt;Python&lt;/th&gt;
+      &lt;th&gt;Matlab&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;df=data.frame()&lt;/td&gt;
+      &lt;td&gt;df=pd.DataFrame()&lt;/td&gt;
+      &lt;td&gt;ds = mat2dataset(X)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;apply(df, 2, FUN)&lt;/td&gt;
+      &lt;td&gt;df.apply(FUN, axis=1)&lt;/td&gt;
+      &lt;td&gt;varfun(FUN,ds)&lt;/td&gt;
+      &lt;td&gt;Run function on columns&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;apply(df, 1, FUN)&lt;/td&gt;
+      &lt;td&gt;df.apply(FUN, axis=0)&lt;/td&gt;
+      &lt;td&gt;varfun(FUN,ds)&lt;/td&gt;
+      &lt;td&gt;Run function on rows&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;df = pd.DataFrame([[4, 4], [5, 5]])
+df.apply(lambda x: x.mean(), axis=0)
+df.apply(lambda x: x.mean(), axis=1)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;finding&quot;&gt;Finding&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;R&lt;/th&gt;
+      &lt;th&gt;Python&lt;/th&gt;
+      &lt;th&gt;Matlab&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;which(x==a)&lt;/td&gt;
+      &lt;td&gt;np.where(x == a)&lt;/td&gt;
+      &lt;td&gt;find(x == a)&lt;/td&gt;
+      &lt;td&gt;Check the condition&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;which.max(x)&lt;/td&gt;
+      &lt;td&gt;np.where(x==np.max(x))&lt;/td&gt;
+      &lt;td&gt;find(x == max(x))&lt;/td&gt;
+      &lt;td&gt;Find maximum&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;which.min(x)&lt;/td&gt;
+      &lt;td&gt;np.where(x==np.min(x))&lt;/td&gt;
+      &lt;td&gt;find(x == min(x))&lt;/td&gt;
+      &lt;td&gt;Find minimum&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;missing&quot;&gt;Missing&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;R&lt;/th&gt;
+      &lt;th&gt;Python&lt;/th&gt;
+      &lt;th&gt;Matlab&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;NA&lt;/td&gt;
+      &lt;td&gt;np.nan&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;Missing&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;np.nan&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;Not a number&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Inf&lt;/td&gt;
+      &lt;td&gt;‘inf’&lt;/td&gt;
+      &lt;td&gt;Inf&lt;/td&gt;
+      &lt;td&gt;infinity&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;is.na(x)&lt;/td&gt;
+      &lt;td&gt;np.isnan(x)&lt;/td&gt;
+      &lt;td&gt;isnan(x)&lt;/td&gt;
+      &lt;td&gt;Test whether it na&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;anyNA(X)&lt;/td&gt;
+      &lt;td&gt;x.isnull().any().any()&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;sum(isnan(x)&amp;gt;1&lt;/td&gt;
+      &lt;td&gt;Test whether there is any na&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;set-operator&quot;&gt;Set operator&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;R&lt;/th&gt;
+      &lt;th&gt;Python&lt;/th&gt;
+      &lt;th&gt;Matlab&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;unique(x)&lt;/td&gt;
+      &lt;td&gt;np.unique(x)&lt;/td&gt;
+      &lt;td&gt;unique(x)&lt;/td&gt;
+      &lt;td&gt;find unique value&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;intersect(x,y)&lt;/td&gt;
+      &lt;td&gt;x.intersectionf(y)&lt;/td&gt;
+      &lt;td&gt;intersect(x,y)&lt;/td&gt;
+      &lt;td&gt;find itersect value&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;setdiff(x,y)&lt;/td&gt;
+      &lt;td&gt;x-y&lt;/td&gt;
+      &lt;td&gt;setdiff(x,y)&lt;/td&gt;
+      &lt;td&gt;difference of set&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;see below&lt;/td&gt;
+      &lt;td&gt;x.symmetric_difference(y)&lt;/td&gt;
+      &lt;td&gt;setxor(x,y)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;set exclusion&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;is.element(c,x)&lt;br /&gt; c%in%x&lt;/td&gt;
+      &lt;td&gt;np.isin(c,x)&lt;/td&gt;
+      &lt;td&gt;ismemner(c,x)&lt;/td&gt;
+      &lt;td&gt;True if x includes c&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setxor &amp;lt;- function(x,y) setdiff(union(x,y), intersect(x,y))&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conditional-operator&quot;&gt;Conditional operator&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;R&lt;/th&gt;
+      &lt;th&gt;Python&lt;/th&gt;
+      &lt;th&gt;Matlab&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;if (condition){&lt;br /&gt;dd&lt;br /&gt;}&lt;/td&gt;
+      &lt;td&gt;if condition : &lt;br /&gt;    codes&lt;/td&gt;
+      &lt;td&gt;if condition &lt;br /&gt;   code &lt;br /&gt; end&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ifelse&lt;/td&gt;
+      &lt;td&gt;elif&lt;/td&gt;
+      &lt;td&gt;elseif&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;else&lt;/td&gt;
+      &lt;td&gt;else&lt;/td&gt;
+      &lt;td&gt;else&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;loop&quot;&gt;loop&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;R&lt;/th&gt;
+      &lt;th&gt;Python&lt;/th&gt;
+      &lt;th&gt;Matlab&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;for (i in indices){ &lt;br /&gt; codes &lt;br /&gt;}&lt;/td&gt;
+      &lt;td&gt;for i in indices: &lt;br /&gt;   codes&lt;/td&gt;
+      &lt;td&gt;for i=indices &lt;br /&gt;   codes &lt;br /&gt;  &lt;br /&gt; end&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;summary-statistics&quot;&gt;Summary statistics&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;R&lt;/th&gt;
+      &lt;th&gt;Python&lt;/th&gt;
+      &lt;th&gt;Matlab&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mean(x)&lt;/td&gt;
+      &lt;td&gt;np.mean(x)&lt;/td&gt;
+      &lt;td&gt;mean(x)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;median(x)&lt;/td&gt;
+      &lt;td&gt;np.median(x)&lt;/td&gt;
+      &lt;td&gt;median(x)&lt;/td&gt;
+      &lt;td&gt;calculate sample mdeian&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;var(x)&lt;/td&gt;
+      &lt;td&gt;np.var(x)&lt;/td&gt;
+      &lt;td&gt;var(x)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;sd(x)&lt;/td&gt;
+      &lt;td&gt;np.std(x)&lt;/td&gt;
+      &lt;td&gt;std(x)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cov(x,y)&lt;/td&gt;
+      &lt;td&gt;np.cov(x,y)&lt;/td&gt;
+      &lt;td&gt;cov(x,y)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;corr(x,y)&lt;/td&gt;
+      &lt;td&gt;np.corrcoef(x,y)&lt;/td&gt;
+      &lt;td&gt;corr(x,y)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;random-number&quot;&gt;Random number&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;R&lt;/th&gt;
+      &lt;th&gt;Python&lt;/th&gt;
+      &lt;th&gt;Matlab&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;runif(n,a,b)&lt;/td&gt;
+      &lt;td&gt;np.random.uniform(a,b,n)&lt;/td&gt;
+      &lt;td&gt;unifrnd(a,b,1,n)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;rnorm(n,a,b)&lt;/td&gt;
+      &lt;td&gt;np.random.normal(a,b,n)&lt;/td&gt;
+      &lt;td&gt;normrnd(a,b,1,n)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;sequences&quot;&gt;Sequences&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;R&lt;/th&gt;
+      &lt;th&gt;Python&lt;/th&gt;
+      &lt;th&gt;Matlab&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;seq(a,b,by=c)&lt;/td&gt;
+      &lt;td&gt;np.arange(a,b,c)&lt;/td&gt;
+      &lt;td&gt;a:c:b&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;seq(a,b,length.out=c)&lt;/td&gt;
+      &lt;td&gt;np.linspace(a,b,c)&lt;/td&gt;
+      &lt;td&gt;linspace(a,b,c)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;repeating&quot;&gt;Repeating&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;R&lt;/th&gt;
+      &lt;th&gt;Python&lt;/th&gt;
+      &lt;th&gt;Matlab&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;rep(a,n)&lt;/td&gt;
+      &lt;td&gt;np.repeat(a,n)&lt;/td&gt;
+      &lt;td&gt;repmat(a,1,n)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;a:b&lt;/td&gt;
+      &lt;td&gt;a:b&lt;/td&gt;
+      &lt;td&gt;a:b&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;working-directory&quot;&gt;Working directory&lt;/h2&gt;
+
+&lt;p&gt;R  | Python | Matlab|Description
+——-   | ——-| ——-| ——-
+dir()| os.dir(“.”) |dir |  list files and folders
+getwd|os.getwcd() | pwd | Display the current working directory
+setwd|os.chdir(“folder”) | cd folder | Change the current working directory
+ls()| dir() | who | list of loaded objects
+rm(x)| del x| clear x | clear object x from memory
+rm(list = ls())| see below|clear all |  clear all objects from memory&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for obj in dir(): 
+    if obj[0] == '_': continue
+    del globals()[obj]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;needed-python-library&quot;&gt;Needed Python library&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;import math&lt;/code&gt;&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;import numpy as np&lt;/code&gt;&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;import pandas as pd&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;More useful link:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://umaine.edu/mathematics/wp-content/uploads/sites/70/2018/08/matlabR.pdf&quot;&gt;Matlab / R&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://mathesaurus.sourceforge.net/matlab-python-xref.pdf&quot;&gt;MATLAB commands in numerical Python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;license&quot;&gt;License&lt;/h3&gt;
+&lt;p&gt;Copyright (c) 2018 Saeid Amiri&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;#contents&quot;&gt;⬆ back to top&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Cheatsheet for markdown.</title>
+   <link href="http://saeidamiri1.github.io/2019/02/markdown.html"/>
+   <updated>2019-02-01T00:00:00-05:00</updated>
+   <id>http://saeidamiri1.github.io/2019/02/markdown</id>
+   <content type="html">&lt;h1 id=&quot;cheatsheet-for-markdown-basics&quot;&gt;Cheatsheet for markdown (Basics)&lt;/h1&gt;
+&lt;h2 id=&quot;contents&quot;&gt;Contents&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#Heading-1&quot;&gt;Heading&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#emphasis&quot;&gt;Emphasis&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#link&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#code&quot;&gt;Code&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#list&quot;&gt;List&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#latex&quot;&gt;Latex&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#image&quot;&gt;Image&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#foldable-text&quot;&gt;Foldable text&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#emoji-and-hotkey&quot;&gt;Emoji and Hotkey&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#miscellaneous&quot;&gt;miscellaneous&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#comment&quot;&gt;Comment&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#indent&quot;&gt;Indent&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#Footnotes&quot;&gt;Footnotes&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#useful-link&quot;&gt;Useful link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h1 id=&quot;heading-1&quot;&gt;Heading 1&lt;/h1&gt;
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; # Heading 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;heading-2&quot;&gt;Heading 2&lt;/h2&gt;
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ## Heading 2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;heading-3&quot;&gt;Heading 3&lt;/h3&gt;
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ### Heading 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;heading-4&quot;&gt;Heading 4&lt;/h4&gt;
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; #### Heading 4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h5 id=&quot;heading-5&quot;&gt;Heading 5&lt;/h5&gt;
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ##### Heading 5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;emphasis&quot;&gt;Emphasis&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Italic text&lt;/em&gt;
+How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; *Italic text* or _Italic text_
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Bold text&lt;/strong&gt;
+How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; **Bold text** or __Bold text__
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;del&gt;Strikethrough&lt;/del&gt;
+How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~~Strikethrough~~
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;blockquote&lt;/p&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;blockquote
+How:&lt;/p&gt;
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;blockquote
+blockquote
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;Color&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span style=&quot;color:red&quot;&amp;gt;Color&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;link&quot;&gt;Link&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.google.com/&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[Link](http://www.google.com/)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
+&lt;p&gt;inline &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;code&lt;/code&gt;
+multiple lines of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;codes&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; `code`   
+    ```
+       codes
+    ```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;list&quot;&gt;List&lt;/h1&gt;
+
+&lt;p&gt;Unordered List&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Bullet
+    &lt;ul&gt;
+      &lt;li&gt;sub bullet
+        &lt;ul&gt;
+          &lt;li&gt;Sub-sub bullet&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Bullet
+    &lt;ul&gt;
+      &lt;li&gt;sub bullet
+        &lt;ul&gt;
+          &lt;li&gt;Sub-sub bullet&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Unordered List
+- Bullet
+  - sub bullet
+    - Sub-sub bullet
+- Bullet
+  - sub bullet
+    - Sub-sub bullet
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Numbered list
+    &lt;ol&gt;
+      &lt;li&gt;Sub numbered list&lt;/li&gt;
+      &lt;li&gt;Sub numbered kist&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. Numbered list
+    1. Sub numbered list
+    2. Sub numbered kist
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Task List&lt;/p&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;An uncompleted task&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;A completed task&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- [ ] An uncompleted task
+- [x] A completed task
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Horizontal line :&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-----
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;latex&quot;&gt;Latex&lt;/h1&gt;
+&lt;p&gt;LATEX&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://latex.codecogs.com/svg.latex?E_0=mc^2&quot; alt=&quot;E_0=mc^2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://tex.s2cms.ru/svg/E_0=mc^2&quot; alt=&quot;E_0=mc^2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![E_0=mc^2](https://latex.codecogs.com/svg.latex?E_0=mc^2)
+
+&amp;lt;img src=&quot;https://tex.s2cms.ru/svg/E_0=mc^2&quot; alt=&quot;E_0=mc^2&quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;table&quot;&gt;Table&lt;/h1&gt;
+&lt;p&gt;Table:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;header 1&lt;/th&gt;
+      &lt;th&gt;header 2&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Row 1&lt;/td&gt;
+      &lt;td&gt;Values&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Row 2 &lt;br /&gt; continue&lt;/td&gt;
+      &lt;td&gt;Values&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;header 1  | header 2
+-------   | -------
+Row 1     |  Values
+Row 2 &amp;lt;br&amp;gt; continue    |  Values
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;image&quot;&gt;Image&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Image:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/saeidamiri1/saeidamiri1.github.io/master/public/favicon.ico&quot; alt=&quot;picture&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![picture](https://raw.githubusercontent.com/saeidamiri1/saeidamiri1.github.io/master/public/favicon.ico)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;foldable-text&quot;&gt;Foldable text&lt;/h1&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Hidden materials&lt;/summary&gt;
+&lt;p&gt; Put text here &lt;/p&gt;
+&lt;/details&gt;
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;details&amp;gt;
+&amp;lt;summary&amp;gt;Hidden materials&amp;lt;/summary&amp;gt;
+&amp;lt;p&amp;gt; Put text here &amp;lt;/p&amp;gt;
+&amp;lt;/details&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;emoji-and-hotkey&quot;&gt;Emoji and Hotkey&lt;/h1&gt;
+
+&lt;p&gt;:+1:&lt;/p&gt;
+
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  :+1:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The complete list can be found at &lt;a href=&quot;https://www.webfx.com/tools/emoji-cheat-sheet/&quot;&gt;emoji list&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Hotkey:
+&lt;kbd&gt;⌘C&lt;/kbd&gt;&lt;/p&gt;
+
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;kbd&amp;gt;⌘C&amp;lt;/kbd&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;common hotkey:
+⌥(Option)⌃(Control)⌘(Command)⇧(Shift)⇪(Caps Lock)
+⇥(Tab) ↩(Return) ⌫(Delete)↑(Up)↓(Down)←(Left)→ (right)&lt;/p&gt;
+
+&lt;h1 id=&quot;miscellaneous&quot;&gt;miscellaneous&lt;/h1&gt;
+&lt;h2 id=&quot;comment&quot;&gt;Comment&lt;/h2&gt;
+&lt;!--
+Does not show
+--&gt;
+
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;!--
+ Does not show
+--&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;indent&quot;&gt;indent&lt;/h2&gt;
+&lt;p&gt;  with indent&lt;/p&gt;
+
+&lt;p&gt;How:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;amp;nbsp; with indent 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h2&gt;
+&lt;p&gt;Need more [^1] to say.&lt;br /&gt;
+[^1]: This is the Footnote.&lt;/p&gt;
+
+&lt;h1 id=&quot;useful-references&quot;&gt;Useful references&lt;/h1&gt;
+&lt;p&gt;-[ref1]:  https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&lt;/p&gt;
+
+&lt;p&gt;If you are interested in using  R Markdown, [ref2] and [ref3] would be a good reference.&lt;br /&gt;
+-[ref2] https://bookdown.org/yihui/rmarkdown/ 
+&lt;br /&gt;
+-[ref3] http://www.stat.cmu.edu/~cshalizi/rmarkdown/#numbered-lists&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;#contents&quot;&gt;⬆ back to top&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;license&quot;&gt;License&lt;/h3&gt;
+&lt;p&gt;Copyright (c) 2019 Saeid Amiri&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>How I Atom R.</title>
+   <link href="http://saeidamiri1.github.io/2018/04/How-Atom-R.html"/>
+   <updated>2018-04-13T00:00:00-04:00</updated>
+   <id>http://saeidamiri1.github.io/2018/04/How-Atom-R</id>
+   <content type="html">&lt;p&gt;&lt;strong&gt;Under construction&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;rbox&quot;&gt;Rbox&lt;/h3&gt;
+&lt;p&gt;I want to share my experience of using Atom as my day-to-day text editor for whom need coding and typing.  This post inspired by  @benbalter’s &lt;a href=&quot;http://ben.balter.com/2016/12/23/atom-for-prose/&quot;&gt;How I Atom (for prose)&lt;/a&gt;,&lt;a href=&quot;http://blog.rohanshewale.me/post/2017/02/how-i-atom/&quot;&gt;ron4stoppable&lt;/a&gt; that discus Atom as a computing environment, thought I’d talk a bit coding in R.&lt;/p&gt;
+
+&lt;p&gt;I deployed a packaged &lt;a href=&quot;https://github.com/saeidamiri1/rbox/wiki&quot;&gt;Rbox package&lt;/a&gt; ,
+it designed for running R in Atom editor.
+Rbox defines the R grammar in Atom editor to work and facilitate with snippets.  The R’s code in Atom can be run in see &lt;a href=&quot;https://github.com/saeidamiri1/rbox/wiki/Use-under-macOS&quot;&gt;run inline&lt;/a&gt; or via terminal. To run inline  install  &lt;a href=&quot;https://atom.io/packages/hydrogen&quot;&gt;hydrogen&lt;/a&gt;, the package Hydrogen provides a modern approach of using Jupyter kernels in Atom. It lets you choose which codes (the whole file, a single line, and a selection) you want to run. To run the code using termianl, install&lt;a href=&quot;https://atom.io/packages/termination&quot;&gt;termination&lt;/a&gt;. This package provides the access to the terminal in Atom and the code can be run in the terminal without leaving Atom.&lt;/p&gt;
+
+&lt;h3 id=&quot;editor&quot;&gt;Editor&lt;/h3&gt;
+&lt;p&gt;Atom can be used as regular editor, you need to install appropriate packages.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://atom.io/packages/theme-switcher&quot;&gt;Theme-switcher&lt;/a&gt; - Switch between dark and light themes, helpful if you ever work outside.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://atom.io/packages/minimap&quot;&gt;Minimap&lt;/a&gt; - It provides a preview of the full source code.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Split&lt;/a&gt; - When working on a long text code, split (right click to select it) provides very useful method for working on different part of file.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Shortcut keys&lt;/a&gt; - Atom has several shortcut keys, look at settings&amp;gt;Keybindings for the existing shortcut keys in your Atom. A short review can be found in &lt;a href=&quot;https://github.com/nwinkler/atom-keyboard-shortcuts&quot;&gt;Shortcuts&lt;/a&gt;, I often use &lt;strong&gt;cmd+shift+d&lt;/strong&gt;: duplicate the selected code.
+ &lt;strong&gt;ctrl+F2&lt;/strong&gt;: mark the line\lines. &lt;strong&gt;Cmd+/&lt;/strong&gt;:  inserts the comment character immediately in the beginning of line. IF your plain text is R, it adds # at in front of line. &lt;strong&gt;ctrl-tab (ctrl-shift-tab)&lt;/strong&gt;: move through the current open tabs (forward and backwards). &lt;strong&gt;cmd-shift-p&lt;/strong&gt; to access the Command Palette.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;theme&quot;&gt;Theme&lt;/h3&gt;
+&lt;p&gt;Select an appropriate theme from settings&amp;gt;Themes. I personally use UI Theme: One Dark and Syntax Theme:  One Dark.&lt;/p&gt;
+
+&lt;h3 id=&quot;markdown&quot;&gt;Markdown&lt;/h3&gt;
+&lt;p&gt;There’s a number of Markdown-specific packages, I like &lt;a href=&quot;https://atom.io/packages/markdown-preview-enhanced&quot;&gt;Markedown Previrew enhanced&lt;/a&gt; and &lt;a href=&quot;https://github.com/atom/markdown-preview&quot;&gt;Markedown Previrew &lt;/a&gt; among many other.&lt;/p&gt;
+
+&lt;h3 id=&quot;linters&quot;&gt;Linters&lt;/h3&gt;
+&lt;p&gt;Linter compare the current file with a predefined structure. Rbox has Grammar that can show mistake in the script file, there is linter for R, I am not using it because it is very sensitive to the space between parentheses.&lt;/p&gt;
+
+&lt;p&gt;I like linter for spell checks.
+@balter’s &lt;a href=&quot;https://ben.balter.com/2016/12/23/atom-for-prose/&quot;&gt;“How I Atom” post&lt;/a&gt;  gave a short description, see below&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;h5 id=&quot;prose-linters&quot;&gt;Prose linters&lt;/h5&gt;
+  &lt;p&gt;There are a few prose-specific linters I credit for improving my day-to-day writing:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://atom.io/packages/linter-write-good&quot;&gt;linter-write-good&lt;/a&gt; - A grammar linter, Write Good checks all sorts of things, like cliches, passive voice, and unnecessarily wordy phrases.&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://atom.io/packages/linter-markdown&quot;&gt;linter-markdown&lt;/a&gt; - This linter, based on &lt;a href=&quot;https://github.com/gnab/remark&quot;&gt;Remark JS&lt;/a&gt; lints Markdown formatting, ensuring things like headings are surrounded by whitespace and bulleted lists are consistent.&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://atom.io/packages/linter-alex&quot;&gt;linter-alex&lt;/a&gt; - &lt;a href=&quot;https://github.com/wooorm/alex&quot;&gt;Alex&lt;/a&gt; checks your writing for biased or insensitive language.&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://atom.io/packages/linter-just-say-no&quot;&gt;linter-just-say-no&lt;/a&gt; - Discourages you from using hedge words that weaken’s the impact of your writing.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>General Hybrid Clustering.</title>
+   <link href="http://saeidamiri1.github.io/2018/03/General-Hybrid-Clustering.html"/>
+   <updated>2018-03-10T00:00:00-05:00</updated>
+   <id>http://saeidamiri1.github.io/2018/03/General-Hybrid-Clustering</id>
+   <content type="html">&lt;p&gt;Clustering is an unsupervised technique to find underlying structure in a dataset by grouping
+data points into subsets that are as homogeneous as possible, clustering is a widely used unsupervised technique for identifying natural classes within a set of data. &lt;a href=&quot;https://arxiv.org/pdf/1503.01183v2.pdf&quot;&gt;Amiri et al. (2018)&lt;/a&gt; proposed a clustering technique for general clustering problems including those that have non-convex clusters. The proposed is fully nonparametric and it generates clusters for a given desired number of clusters K. They also discussed estimating the size of cluster.&lt;/p&gt;
+
+&lt;h2 id=&quot;clustering&quot;&gt;Clustering&lt;/h2&gt;
+&lt;p&gt;The proposed clustering method is referred to as Stabilized Hybrid Clustering (SHC) and its steps is presented in Algorithm 1,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/saeidamiri1/GHC/blob/master/algorithm1.png&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Algorithm 1 is implemented in R,&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SHC(x,K,B=200,knmin,knmax)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The arguments are: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt; is the observation, use the R’s matrix format. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; is number of run to get a stabilized clusters, we used B=200 in our computations. Concerning &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt;, run the code with different Bs and if you see huge different in result, increase the number of iterations. knmin and knmax are the minimum and maximum size of cluster to get the stabilized clustering. We used knmin=2 and knmax=n/5, where n is the sample size.&lt;br /&gt;
+This &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SHC()&lt;/code&gt; provides the distance matrix and the predicted cluster.&lt;/p&gt;
+
+&lt;h2 id=&quot;size-of-cluster&quot;&gt;Size of Cluster&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/1503.01183v2.pdf&quot;&gt;Amiri et al. (2018)&lt;/a&gt; also discussed a technique to estimate the size of clusters, it is presented in Algorithm 2,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/saeidamiri1/GHC/blob/master/algorithm2.png&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Algorithm 2 is implemented in R,&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;EK(observation,B=200,knmin,knmax)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;source&quot;&gt;Source&lt;/h2&gt;
+&lt;p&gt;The source of codes are available in GitHub and using the following code can be uploaded in R&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; source('https://raw.githubusercontent.com/saeidamiri1/GHC/master/SHC.R')
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Also load the following libraries to run the computations in parallely,&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; library(&quot;foreach&quot;)
+&amp;gt; library(&quot;doParallel&quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;data-set&quot;&gt;Data set&lt;/h2&gt;
+&lt;p&gt;To describe the codes, we used the spiral data which is a non-convex data, the following script load source, dataset and plot it,&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; source('https://raw.githubusercontent.com/saeidamiri1/GHC/master/SHC.R')
+&amp;gt; library(&quot;foreach&quot;)
+&amp;gt; library(&quot;doParallel&quot;)
+
+&amp;gt; datasource &amp;lt;- &quot;https://github.com/saeidamiri1/GHC/blob/master/SPIRAL.RData?raw=true&quot;
+&amp;gt; load(url(datasource))
+&amp;gt; Spiral
+&amp;gt; plot(Spiral)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/saeidamiri1/GHC/blob/master/Rplot.jpeg&quot; width=&quot;300&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;run-the-cluster&quot;&gt;Run the Cluster&lt;/h1&gt;
+&lt;p&gt;Once the data and the codes are loaded in R, the clustering can be obtained using the following script&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; knmin0&amp;lt;-2
+&amp;gt; knmax0&amp;lt;-floor(dim(Spiral)[1]/5)
+&amp;gt; knmax0
+[1] 62
+&amp;gt; CLUS&amp;lt;-SHC(Spiral,3,B=200,knmin=knmin0,knmax=knmax0)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The dendrogram can be also plotted,&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; # plot the dendrogram
+&amp;gt; plot(hclust(CLUS[[1]],method=&quot;single&quot;),h=-1)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/saeidamiri1/GHC/blob/master/Rplot01.jpeg&quot; width=&quot;500&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The predicted clusters are also available,&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; # print the assigned clusters to observation
+&amp;gt; print(CLUS[[2]])
+  [1] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ [42] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ [83] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+[124] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+[165] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+[206] 2 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+[247] 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+[288] 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# plot the data with the assigned clusters
+plot(Spiral,col=CLUS[[2]])
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/saeidamiri1/GHC/blob/master/Rplot02.jpeg&quot; width=&quot;300&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It is of interest to run the proposed method for a cluster of #4,  the following shows the codes and the clusters,&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; CLUS&amp;lt;-SHC(Spiral,4,B=200,knmin=knmin0,knmax=knmax0)
+&amp;gt; plot(Spiral,col=CLUS[[2]])
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/saeidamiri1/GHC/blob/master/Rplot03.jpeg&quot; width=&quot;300&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;size-of-clusters&quot;&gt;Size of clusters&lt;/h2&gt;
+&lt;p&gt;The following script shows the function of estimating the size of clusters,&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; KCLUS&amp;lt;-EK(Spiral,B=200,knmin=knmin0,knmax=knmax0)
+[1] 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# plot the dendrogram
+&amp;gt; plot(hclust(KCLUS[[1]],method=&quot;single&quot;),h=-1)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/saeidamiri1/GHC/blob/master/Rplot04.jpeg&quot; width=&quot;500&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; # print the assigned clusters to observation
+&amp;gt; print(KCLUS[[2]])
+[1] 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/1503.01183v2.pdf&quot;&gt;Amiri, S., Clarke, B, Clarke, J. &amp;amp; Koepke, H.A. (2018). A General Hybrid Clustering Technique.&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>
