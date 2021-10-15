@@ -10,11 +10,9 @@ Interests
 Data Analysis<br>
 Computational Statistics<br>
 Statistical Machine Learning<br>
-Computer intensive methods <br>
+Predictive models <br>
 High dimensional data <br>
-Statistical inference
-</p>
-
+Statistical inference </p>
 
 <h3>
 Current position
