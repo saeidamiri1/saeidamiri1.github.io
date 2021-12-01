@@ -16,71 +16,62 @@ permalink: papers/
 ## Submitted
 <ul>
 <p>
-Amiri, S. (2020). How Aggregating improves the Classification’s accuracy.
+Amiri, S., Modarres, R. (2020). MTSviewer: a database to visualize mitochondrial targeting sequences, cleavage sites, and mutations on protein structures. (<a href="https://www.biorxiv.org/content/10.1101/2021.11.25.470064v1"> pdf, <a href="https://mtsviewer.shinyapps.io/MTSviewer/"> supplementary</a>)
 </p>
 <p>
-Amiri, S. (2020). Meta inference of Heterogeneous Data Streams.
+Amiri, S., Modarres, R. (2020). How Aggregating improves the Classification’s accuracy. (<a href="https://github.com/saeidamiri1/sagg/blob/master/README.md"> supplementary</a>)
 </p>
 <p>
 Amiri, S. (2020). ESRL: Ensemble SVD-regularized learning to achieve clustering.
 </p>
 <p>
-Amiri, S., Goulet, JA.,  Morency, C.,  and Saunier, N. (2020).
-Modeling Transportation Time Series using Bayesian Dynamic Linear Model.
+Amiri, S. (2020). Dissimilarity of time series using Discretized time series global Alignment; with application of transportation data.  (<a href="https://github.com/saeidamiri1/DTGA#readme"> supplementary</a>)
 </p>
 <p>
-Amiri, S. (2020). Dissimilarity of time series using Discretized time series global Alignment; with application of transportation data.
+Amiri, S., Goulet, JA.,  Morency, C., and Saunier, N. (2020). Modeling Transportation Time Series using Bayesian Dynamic Linear Model.
 </p>
 <p>
-Goulet JA, Nguyen LH, Amiri S. (2020). Tractable Approximate Gaussian Inference for Bayesian Neural Networks.  <em> arXiv preprint arXiv:2004.09281.</em>
+Deka, B., Nguyen, LH., Amiri, S., Goulet, JA. (2020). The Gaussian Multiplicative Approximation for State-Space Models. 
 </p>
 <p>
-Deka, B., Nguyen, LH., Amiri, S., Goulet, JA. (2020). Tractable Approximate Gaussian Inference for Bayesian Neural Networks. 
-</p>
-<p>
-Amiri, S., Hassani, H., Heravi, S., & Morgan, P. (2020). Ranked Set Sampling with Probability Proportional to Size with Application to Economic Data. 
+Amiri, S., Hassani, H., Heravi, S. (2020). Ranked Set Sampling with Probability Proportional to Size with Application to Economic Data. 
 </p>
 </ul>
 
 ## Published
 <ul>
  <p>
- Amiri, S., Jozani, M. J., & Modarres, R. (2020). On multiple imputation for unbalanced ranked set samples with applications in quantile estimation.  <em> Brazilian Journal of Probability and Statistics </em>, 34(4), 752-769. (<a href="https://github.com/saeidamiri1/saeidamiri1.github.io/blob/master/public/published/a2019URSSQ.pdf"> pdf</a>,  
-<a href="https://projecteuclid.org/euclid.bjps/1601020817">  Journal</a>
-)
+ Goulet JA, Nguyen LH, Amiri S. (2021). Tractable Approximate Gaussian Inference for Bayesian Neural Networks.  <em>  Journal of Machine Learning Research, 20-1009, In press.  </em>  (<a href="h/https://arxiv.org/pdf/2004.09281.pdf"> pdf</a>)
+</p>
+
+ <p>
+ Amiri, S. (2021). Meta inference of heterogeneous data streams.  <em>  Journal of Biopharmaceutical Statistics, 1-17</em> . (<a href="https://github.com/saeidamiri1/saeidamiri1.github.io/blob/master/public/published/amiri2021meta.pdf"> pdf</a>,<a href="https://www.tandfonline.com/doi/abs/10.1080/10543406.2021.1946692">  Journal</a>, <a href="https://saeidamiri1.github.io/codes/mtmeans/mtmeans"> supplementary</a>)
+</p>
+
+ <p>
+ Amiri, S., Jozani, M. J., & Modarres, R. (2020). On multiple imputation for unbalanced ranked set samples with applications in quantile estimation.  <em> Brazilian Journal of Probability and Statistics </em>, 34(4), 752-769. (<a href="https://github.com/saeidamiri1/saeidamiri1.github.io/blob/master/public/published/a2019URSSQ.pdf"> pdf</a>,<a href="https://projecteuclid.org/euclid.bjps/1601020817">  Journal</a>)
 </p>
 <p>
 Amiri, S., Clarke, B. S., Clarke, J. L., & Koepke, H. (2019). A general hybrid clustering technique.  <em> Journal of Computational and Graphical Statistics, 28(3), 540-551. </em>
-(<a href="https://github.com/saeidamiri1/GHC/blob/master/GHCsource/manuscript/manuscript-vr3.pdf"> pdf</a>,  
-<a href="https://amstat.tandfonline.com/doi/full/10.1080/10618600.2018.1546593#">  Journal</a>,
-<a href="https://github.com/saeidamiri1/GHC/wiki"> Wiki</a> 
-)
+(<a href="https://github.com/saeidamiri1/GHC/blob/master/GHCsource/manuscript/manuscript-vr3.pdf"> pdf</a>, <a href="https://amstat.tandfonline.com/doi/full/10.1080/10618600.2018.1546593#">  Journal</a>, <a href="https://github.com/saeidamiri1/GHC/wiki"> Wiki</a> )
 </p>
 
 <p>
 Amiri, S., Clarke, B. S., & Clarke, J. L. (2018). Clustering categorical data via ensembling dissimilarity matrices. <em> Journal of Computational and Graphical Statistics</em> , 27(1), 195-208.
-(<a href="https://arxiv.org/pdf/1506.07930v1.pdf">pdf</a>,<a href="http://www.tandfonline.com/doi/full/10.1080/10618600.2017.1305278">  Journal</a>,
-<a href="https://github.com/jlp2duke/EnsCat/wiki/How-To-with-Examples"> supplementary</a>)
+(<a href="https://arxiv.org/pdf/1506.07930v1.pdf">pdf</a>,<a href="http://www.tandfonline.com/doi/full/10.1080/10618600.2017.1305278">  Journal</a>,<a href="https://github.com/jlp2duke/EnsCat/wiki/How-To-with-Examples"> supplementary</a>)
 </p>
 
    
 <p>
 Amiri, S., Jozani Jafari, M., & Modarres, R. (2018). Randomly Selected Order Statistics in Ranked Set Sampling: less expensive comparable alternative to simple random sampling. <em> Environmental and Ecological Statistics. Doi:10.1007/s10651-018-0402-x. </em>
-(<a href="https://link.springer.com/article/10.1007/s10651-018-0402-x"> pdf</a>,  
-<a href="https://link.springer.com/article/10.1007/s10651-018-0402-x">  Journal</a>,
-<a href="https://saeidamiri1.github.io/codes/general/SRRSS"> supplementary</a> 
-)
+(<a href="https://link.springer.com/article/10.1007/s10651-018-0402-x"> pdf</a>,  <a href="https://link.springer.com/article/10.1007/s10651-018-0402-x">  Journal</a>, <a href="https://saeidamiri1.github.io/codes/general/SRRSS"> supplementary</a>)
 </p>
 
   
 <p>
 Amiri, S., & Dinov, I. D. (2017). msktuple: An Integrated R Library for Alignment-Free Multiple Sequence k-Tuple Analysis. <em>
 Chemometrics and Intelligent Laboratory Systems, 168, 84-88. Doi: 10.1016/j.chemolab.2017.07.012.</em>
-(<a href="https://www.researchgate.net/publication/318892425_msktuple_An_Integrated_R_library_for_alignment-free_multiple_sequence_k-tuple_analysis"> pdf</a>,  
-<a href="http://www.sciencedirect.com/science/article/pii/S0169743917303878">  Journal</a>,
-<a href="https://github.com/saeidamiri1/msktuple/wiki"> supplementary
-</a> 
-)
+(<a href="https://www.researchgate.net/publication/318892425_msktuple_An_Integrated_R_library_for_alignment-free_multiple_sequence_k-tuple_analysis"> pdf</a>, <a href="http://www.sciencedirect.com/science/article/pii/S0169743917303878">  Journal</a>, <a href="https://github.com/saeidamiri1/msktuple/wiki"> supplementary</a>)
 </p>
 
 <p>
