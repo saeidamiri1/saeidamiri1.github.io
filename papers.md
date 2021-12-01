@@ -16,7 +16,7 @@ permalink: papers/
 ## Submitted
 <ul>
 <p>
-Amiri, S., Modarres, R. (2020). MTSviewer: a database to visualize mitochondrial targeting sequences, cleavage sites, and mutations on protein structures. (<a href="https://www.biorxiv.org/content/10.1101/2021.11.25.470064v1"> pdf, <a href="https://mtsviewer.shinyapps.io/MTSviewer/"> supplementary</a>)
+Amiri, S., Modarres, R. (2020). MTSviewer: a database to visualize mitochondrial targeting sequences, cleavage sites, and mutations on protein structures. (<a href="https://www.biorxiv.org/content/10.1101/2021.11.25.470064v1"> pdf </a>, <a href="https://mtsviewer.shinyapps.io/MTSviewer/"> supplementary</a>)
 </p>
 <p>
 Amiri, S., Modarres, R. (2020). How Aggregating improves the Classification’s accuracy. (<a href="https://github.com/saeidamiri1/sagg/blob/master/README.md"> supplementary</a>)
