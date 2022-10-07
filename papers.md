@@ -16,23 +16,21 @@ permalink: papers/
 ## Submitted
 <ul>
 <p>
-Amiri, S., Modarres, R. (2020). MTSviewer: a database to visualize mitochondrial targeting sequences, cleavage sites, and mutations on protein structures. (<a href="https://www.biorxiv.org/content/10.1101/2021.11.25.470064v1"> pdf </a>, <a href="https://mtsviewer.shinyapps.io/MTSviewer/"> supplementary</a>)
+Andrew N. Bayne, Jing Dong, Saeid Amiri, Sali M.K. Farhan, Jean-Francois Trempe. MTSviewer: a database to visualize mitochondrial targeting sequences, cleavage sites, and mutations on protein structures  bioRxiv (<a href="https://www.biorxiv.org/content/10.1101/2021.11.25.470064v1"> pdf </a>, <a href=" https://neurobioinfo.github.io/MTSvieweR"> supplementary</a>)
 </p>
 <p>
-Amiri, S., Modarres, R. (2020). How Aggregating improves the Classification’s accuracy. (<a href="https://github.com/saeidamiri1/sagg/blob/master/README.md"> supplementary</a>)
+Amiri, S., Modarres, R. (2021). How Aggregating improves the Classification’s accuracy. (<a href="https://github.com/saeidamiri1/sagg/blob/master/README.md"> supplementary</a>)
 </p>
 <p>
-Amiri, S. (2020). ESRL: Ensemble SVD-regularized learning to achieve clustering.
+Amiri, S. (2021). ESRL: Ensemble SVD-regularized learning to achieve clustering.
 </p>
 <p>
-Amiri, S. (2020). Dissimilarity of time series using Discretized time series global Alignment; with application of transportation data.  (<a href="https://github.com/saeidamiri1/DTGA#readme"> supplementary</a>)
+Amiri, S. (2021). Dissimilarity of time series using Discretized time series global Alignment; with application of transportation data.  (<a href="https://github.com/saeidamiri1/DTGA#readme"> supplementary</a>)
 </p>
 <p>
 Amiri, S., Goulet, JA.,  Morency, C., and Saunier, N. (2020). Modeling Transportation Time Series using Bayesian Dynamic Linear Model.
 </p>
-<p>
-Deka, B., Nguyen, LH., Amiri, S., Goulet, JA. (2020). The Gaussian Multiplicative Approximation for State-Space Models. 
-</p>
+
 <p>
 Amiri, S., Hassani, H., Heravi, S. (2020). Ranked Set Sampling with Probability Proportional to Size with Application to Economic Data. 
 </p>
@@ -41,9 +39,11 @@ Amiri, S., Hassani, H., Heravi, S. (2020). Ranked Set Sampling with Probability 
 ## Published
 <ul>
  <p>
- Goulet JA, Nguyen LH, Amiri S. (2021). Tractable Approximate Gaussian Inference for Bayesian Neural Networks.  <em>  Journal of Machine Learning Research, 20-1009, In press.  </em>  (<a href="h/https://arxiv.org/pdf/2004.09281.pdf"> pdf</a>)
+ Goulet JA, Nguyen LH, Amiri S. (2021). Tractable Approximate Gaussian Inference for Bayesian Neural Networks.  <em>  Journal of Machine Learning Research, 20-1009, In press.  </em>  (<a href="https://arxiv.org/pdf/2004.09281.pdf"> pdf</a>)
 </p>
-
+ <p>
+Deka, B., Ha Nguyen, L., Amiri, S and Goulet, J-A. (2022).The Gaussian Multiplicative Approximation forState-Space Models.  Structural Control and Health Monitoring.  Volume 29, Issue 3, e2904. </em>  (<a href="https://arxiv.org/pdf/2004.09281.pdf"> pdf</a>
+</p>
  <p>
  Amiri, S. (2021). Meta inference of heterogeneous data streams.  <em>  Journal of Biopharmaceutical Statistics, 1-17</em> . (<a href="https://github.com/saeidamiri1/saeidamiri1.github.io/blob/master/public/published/amiri2021meta.pdf"> pdf</a>,<a href="https://www.tandfonline.com/doi/abs/10.1080/10543406.2021.1946692">  Journal</a>, <a href="https://saeidamiri1.github.io/codes/mtmeans/mtmeans"> supplementary</a>)
 </p>

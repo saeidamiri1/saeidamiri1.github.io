@@ -1,0 +1,129 @@
+I"¨
+<p>*Amiri, S. (2021). Meta inference of Heterogeneous Data Streams.
+Journal of Biopharmaceutical Statistics, to be appeared *</p>
+
+<p>This work aims to explore the meta inference, where data are being collected from different studies. Providing an accurate estimate of the mean from separate studies is a central aspect of the practical sciences.
+The source of codes are stored in Github.</p>
+
+<pre><code class="language-{}"># 
+CM&lt;-function(X){
+  mean(unlist(lapply(X,mean)))
+}
+
+#poolrd mean
+PM&lt;-function(X){
+  mean(unlist(X))
+}
+
+# GD estimstor
+GD&lt;-function(X){
+  wgd&lt;-(unlist(lapply(X,length))/unlist(lapply(X,var)) )
+  wgd&lt;-wgd/sum( wgd)
+  sum(wgd*unlist(lapply(X,mean)))
+}
+
+
+#MlE estimator
+MLE&lt;-function(X){
+  S00&lt;-unlist(lapply(X,var))
+  n00&lt;-unlist(lapply(X,length))
+  xba1&lt;-unlist(lapply(X,mean))
+  ML0&lt;-function(theta){
+    theta0&lt;-0
+    for( i in 1:(length(X))){
+      theta0&lt;-theta0+sum(n00[i]/2*(log(theta[i+1]^2)+S00[i]/theta[i+1]^2+(xba1[i]-theta[1])^2/theta[i+1]^2))
+    }
+    return(theta0)
+  }
+  s0&lt;-nlm(ML0, theta &lt;- c(mean(xba1),S00^.5), hessian=TRUE)$estimate[(1:(length(X)))+1]
+  wgd&lt;-unlist(lapply(X,length))/ s0^2
+  wgd&lt;-wgd/sum(wgd)
+  sum(wgd*unlist(lapply(X,mean)))
+}
+
+
+
+#####
+SV&lt;-function(X){
+  wgd&lt;-(unlist(lapply(X,var))/unlist(lapply(X,length)))
+  wgd0&lt;-NULL
+  for( i in 1:(length(X))){ wgd0[i]&lt;-sum(wgd[-i]) }
+  wgd0&lt;-wgd0/sum(wgd0)
+  sum(wgd0*unlist(lapply(X,mean)))
+}
+
+
+
+DGD&lt;-function(X){
+  xm0&lt;-GD(X)
+  var1&lt;-function(x) sum((x-xm0)^2)/(length(x)-1)
+  wgd&lt;-(unlist(lapply(X,length))/unlist(lapply(X,var1)) )
+  wgd&lt;-wgd/sum( wgd)
+  sum(wgd*unlist(lapply(X,mean)))
+}
+
+DSV&lt;-function(X){ 
+  xm0&lt;-SV(X)
+  var1&lt;-function(x) sum((x-xm0)^2)/(length(x)-1)
+  wgd&lt;-(unlist(lapply(X,var1))/unlist(lapply(X,length)))
+  wgd0&lt;-NULL
+  for( i in 1:(length(X))){ wgd0[i]&lt;-sum(wgd[-i]) }
+  wgd0&lt;-wgd0/sum(wgd0)
+  sum(wgd0*unlist(lapply(X,mean)))
+}
+
+  
+  
+####################
+  ##################
+  
+
+VDGD&lt;-function(X){
+  bz&lt;-NULL
+  for(b in 1:500){
+    z&lt;-list()
+    j&lt;-1
+    for(i in 1:length(X)){
+      z[[j]]&lt;-sample(X[[i]],replace=TRUE)
+      j&lt;-j+1
+    }
+    bz[b]&lt;-DGD(z)
+  }
+  var(bz)
+}
+
+
+VDSV&lt;-function(X){
+  bz&lt;-NULL
+  for(b in 1:500){
+    z&lt;-list()
+    j&lt;-1
+    for(i in 1:length(X)){
+      z[[j]]&lt;-sample(X[[i]],replace=TRUE)
+      j&lt;-j+1
+    }
+    bz[b]&lt;-DSV(z)
+  }
+  var(bz)
+}
+
+DGDSV&lt;-function(X){
+  SL0&lt;-which.min(c(VDGD(X),VDSV(X)))
+  if(SL0==1) res0&lt;-DGD(X)
+  if(SL0==2) res0&lt;-DSV(X)
+  return(res0)
+}
+
+
+DGDSV&lt;-function(X){
+  v1&lt;-VDGD(X)
+  v2&lt;-VDSV(X)
+  
+  res0&lt;-DSV(X)*v1/(v1+v2) + DGD(X)*v2/(v1+v2)
+  return(res0)
+}
+
+
+</code></pre>
+
+:ET

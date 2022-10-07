@@ -1,0 +1,80 @@
+I"ó<p><em>Amiri, S., Modarres, R., &amp; Zwanzig, S. (2016). Tests of Perfect Judgment Ranking using Pseudo-samples.
+Computational Statistics, DOI: 10.1007/s00180-016-0698-7</em></p>
+
+<p>The tests discussed in Amiri et al. (2016) is implemented in R and explained here.
+The source of codes are stored in Github.</p>
+
+<pre><code class="language-{}">library(RCurl)
+### Read codes from github
+script &lt;- getURL("https://raw.githubusercontent.com/saeidamiri1/saeidamiri1.github.io/master/codes/PRSS/PRSS.R", ssl.verifypeer = FALSE)
+eval(parse(text = script))
+########
+
+To generate the imperfect RSS from normal(0,1) with Model V with k=5  run the 
+following function that can be adopted for any k
+ 
+impRSS&lt;-function (m, k) {
+  lambda1&lt;-c(0,1/2,1/2)
+  lambda2&lt;-c(1/4,1/2,1/4)
+  lambda3&lt;-c(1/3,1/3,1/3)
+  lambda4&lt;-c(1/4,1/2,1/4)
+  lambda5&lt;-c(1/2,1/2,0)
+  a&lt;-b&lt;-y&lt;-NULL
+  ii&lt;-1
+  x&lt;-matrix(NA,ncol=sum(m),nrow=k)
+  for (j in 1:sum(m)){
+    x[,ii]&lt;-rnorm(k)
+    ii&lt;-ii+1
+  }
+
+  ac &lt;- 1
+  ob &lt;- list(1, 2, 3, 4, 5)
+  for (j in 1:k) {
+    for (i in 1:m[j]) {
+      if(j==1) {j0&lt;-sample(0:2,1,prob=lambda1,replace=T)}
+      if(j==2) {j0&lt;-sample(1:3,1,prob=lambda2,replace=T)}
+      if(j==3) {j0&lt;-sample(2:4,1,prob=lambda3,replace=T)}
+      if(j==4) {j0&lt;-sample(3:5,1,prob=lambda4,replace=T)}
+      if(j==5) {j0&lt;-sample(4:6,1,prob=lambda5,replace=T)}
+      ob[[j]][i] &lt;- c(sort(x[, ac]))[j0]
+      ac &lt;- ac + 1
+    }
+  }
+  return(ob)
+}
+
+
+# Define your design 
+&gt; m&lt;-c(4,3,5,6,6)
+&gt; k&lt;-5
+&gt; B&lt;-2000
+&gt; xx&lt;-impRSS(m,k)
+
+&gt; xx
+[[1]]
+[1] -0.1702266 -0.4170270 -1.3925779 -2.4777095
+
+[[2]]
+[1] -0.22801938  0.49795032 -0.05232756
+
+[[3]]
+[1] -0.126019858 -0.198851288  1.238206813  0.157570629 -0.007721763
+
+[[4]]
+[1]  0.1991180 -0.1123186 -0.6911788  1.2363997 -0.3216557  0.4892485
+
+[[5]]
+[1]  0.9362383  0.5290396  0.5012376  2.1955910  2.5128868 -0.8929663
+
+
+
+
+&gt; BOR(xx, B, m)
+[1] 0.003
+&gt; BFOD(xx, B, m)
+[1] 0.0025
+&gt; BJTT(xx, B, m)
+[1] 0
+</code></pre>
+
+:ET

@@ -1,0 +1,57 @@
+I"<p>*Amiri, S., Jozani Jafari, M., &amp; Modarres, R. (2018). Randomly Selected Order Statistics in Ranked Set Sampling: less expensive comparable alternative to simple random sampling. Environmental and Ecological Statistics. *</p>
+
+<p>The following includes the codes of RSS, RRSS and SRRSS on the data generated from the normal distribution  N(0,1)</p>
+
+<pre><code class="language-{}">### generate RSS with R from normal 
+
+rss&lt;-function(r){
+x1&lt;-NULL
+for( i in 1:r){
+x1[i]&lt;-sort(rnorm(r))[i]
+}
+mean(x1)
+}
+
+
+rrss&lt;-function(n,r){
+x1&lt;-NULL
+k&lt;-sample(n,r,replace=F)
+for( i in 1:(r)){
+x1[i]&lt;-sort(rnorm(n))[k[i]]
+}
+mean(x1)
+}
+
+
+
+
+srrss&lt;-function(n,r){
+x1&lt;-NULL
+k1&lt;-sample(c(1:(n/2)),r/2)
+k2&lt;-n+1-k1
+k&lt;-c(k1,k2)
+for( i in 1:(r)){
+x1[i]&lt;-sort(rnorm(n))[k[i]]
+}
+mean(x1)
+}
+
+
+#############
+n&lt;-10
+r&lt;-6
+a&lt;-b&lt;-c&lt;-d&lt;-e&lt;-f&lt;-NULL
+for(i in 1:50000){
+a[i]&lt;-rss(r)
+b[i]&lt;-rrss(n,r)
+c[i]&lt;-srrss(n,r)
+}
+
+
+c(mean(a), var(a))
+c(mean(b), var(b))
+c(mean(c), var(c))
+
+</code></pre>
+
+:ET

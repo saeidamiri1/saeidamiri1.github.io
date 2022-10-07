@@ -1,0 +1,41 @@
+I"~<p><strong>Under construction</strong>.</p>
+
+<h3 id="rbox">Rbox</h3>
+<p>I want to share my experience of using Atom as my day-to-day text editor for whom need coding and typing.  This post inspired by  @benbalter’s <a href="http://ben.balter.com/2016/12/23/atom-for-prose/">How I Atom (for prose)</a>,<a href="http://blog.rohanshewale.me/post/2017/02/how-i-atom/">ron4stoppable</a> that discus Atom as a computing environment, thought I’d talk a bit coding in R.</p>
+
+<p>I deployed a packaged <a href="https://github.com/saeidamiri1/rbox/wiki">Rbox package</a> ,
+it designed for running R in Atom editor.
+Rbox defines the R grammar in Atom editor to work and facilitate with snippets.  The R’s code in Atom can be run in see <a href="https://github.com/saeidamiri1/rbox/wiki/Use-under-macOS">run inline</a> or via terminal. To run inline  install  <a href="https://atom.io/packages/hydrogen">hydrogen</a>, the package Hydrogen provides a modern approach of using Jupyter kernels in Atom. It lets you choose which codes (the whole file, a single line, and a selection) you want to run. To run the code using termianl, install<a href="https://atom.io/packages/termination">termination</a>. This package provides the access to the terminal in Atom and the code can be run in the terminal without leaving Atom.</p>
+
+<h3 id="editor">Editor</h3>
+<p>Atom can be used as regular editor, you need to install appropriate packages.</p>
+<ul>
+  <li><a href="https://atom.io/packages/theme-switcher">Theme-switcher</a> - Switch between dark and light themes, helpful if you ever work outside.</li>
+  <li><a href="https://atom.io/packages/minimap">Minimap</a> - It provides a preview of the full source code.</li>
+  <li><a href="">Split</a> - When working on a long text code, split (right click to select it) provides very useful method for working on different part of file.</li>
+  <li><a href="">Shortcut keys</a> - Atom has several shortcut keys, look at settings&gt;Keybindings for the existing shortcut keys in your Atom. A short review can be found in <a href="https://github.com/nwinkler/atom-keyboard-shortcuts">Shortcuts</a>, I often use <strong>cmd+shift+d</strong>: duplicate the selected code.
+ <strong>ctrl+F2</strong>: mark the line\lines. <strong>Cmd+/</strong>:  inserts the comment character immediately in the beginning of line. IF your plain text is R, it adds # at in front of line. <strong>ctrl-tab (ctrl-shift-tab)</strong>: move through the current open tabs (forward and backwards). <strong>cmd-shift-p</strong> to access the Command Palette.</li>
+</ul>
+
+<h3 id="theme">Theme</h3>
+<p>Select an appropriate theme from settings&gt;Themes. I personally use UI Theme: One Dark and Syntax Theme:  One Dark.</p>
+
+<h3 id="markdown">Markdown</h3>
+<p>There’s a number of Markdown-specific packages, I like <a href="https://atom.io/packages/markdown-preview-enhanced">Markedown Previrew enhanced</a> and <a href="https://github.com/atom/markdown-preview">Markedown Previrew </a> among many other.</p>
+
+<h3 id="linters">Linters</h3>
+<p>Linter compare the current file with a predefined structure. Rbox has Grammar that can show mistake in the script file, there is linter for R, I am not using it because it is very sensitive to the space between parentheses.</p>
+
+<p>I like linter for spell checks.
+@balter’s <a href="https://ben.balter.com/2016/12/23/atom-for-prose/">“How I Atom” post</a>  gave a short description, see below</p>
+<blockquote>
+  <h5 id="prose-linters">Prose linters</h5>
+  <p>There are a few prose-specific linters I credit for improving my day-to-day writing:</p>
+  <ul>
+    <li><a href="https://atom.io/packages/linter-write-good">linter-write-good</a> - A grammar linter, Write Good checks all sorts of things, like cliches, passive voice, and unnecessarily wordy phrases.</li>
+    <li><a href="https://atom.io/packages/linter-markdown">linter-markdown</a> - This linter, based on <a href="https://github.com/gnab/remark">Remark JS</a> lints Markdown formatting, ensuring things like headings are surrounded by whitespace and bulleted lists are consistent.</li>
+    <li><a href="https://atom.io/packages/linter-alex">linter-alex</a> - <a href="https://github.com/wooorm/alex">Alex</a> checks your writing for biased or insensitive language.</li>
+    <li><a href="https://atom.io/packages/linter-just-say-no">linter-just-say-no</a> - Discourages you from using hedge words that weaken’s the impact of your writing.</li>
+  </ul>
+</blockquote>
+:ET

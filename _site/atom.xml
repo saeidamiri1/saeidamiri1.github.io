@@ -4,7 +4,7 @@
  <title>Saeid Amiri</title>
  <link href="http://saeidamiri1.github.io/atom.xml" rel="self"/>
  <link href="http://saeidamiri1.github.io/"/>
- <updated>2021-08-25T23:42:25-04:00</updated>
+ <updated>2022-02-18T23:56:39-05:00</updated>
  <id>http://saeidamiri1.github.io</id>
  <author>
    <name></name>
@@ -590,31 +590,31 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.savetxt('file.txt',arr,delimiter=' ')&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.savetxt(&apos;file.txt&apos;,arr,delimiter=&apos; &apos;)&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;Writes to a text file&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.savetxt('file.csv',arr,delimiter=',')&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.savetxt(&apos;file.csv&apos;,arr,delimiter=&apos;,&apos;)&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;Writes to a CSV file&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.loadtxt('file.txt')&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.loadtxt(&apos;file.txt&apos;)&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;Loads from a text file&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.genfromtxt('file.csv',delimiter=',')&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.genfromtxt(&apos;file.csv&apos;,delimiter=&apos;,&apos;)&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;Loads from a CSV file&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.save('file_of_arr.npy ', arr)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.save(&apos;file_of_arr.npy &apos;, arr)&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;Saves  array into a file&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.savez('file_of_arr.npz', arr1, arr2)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.savez(&apos;file_of_arr.npz&apos;, arr1, arr2)&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;Saves  array into a file&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.load('my_array.npy')&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;np.load(&apos;my_array.npy&apos;)&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;Loads arrays&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
@@ -1033,7 +1033,7 @@
       &lt;td&gt;Create a series from a list&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.index = pd.date_range('2000/1/1', periods=df.shape[0])&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.index = pd.date_range(&apos;2000/1/1&apos;, periods=df.shape[0])&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;Add a date index to the data frame&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
@@ -1193,19 +1193,19 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.columns = ['name1','name2']&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.columns = [&apos;name1&apos;,&apos;name2&apos;]&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;Add new name to  columns&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.rename(columns={'old_name': 'new_ name'})&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.rename(columns={&apos;old_name&apos;: &apos;new_ name&apos;})&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;Rename columns&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.set_index('colu')&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;df.set_index(&apos;colu&apos;)&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;Change the index to the given column&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;s.replace([1,2],['two','one'])&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;s.replace([1,2],[&apos;two&apos;,&apos;one&apos;])&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;Replace 1 and 2 with  ‘two’ and ‘one’, respectively&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
@@ -1287,7 +1287,7 @@
       &lt;td&gt;Return elements in position (i-1) by position&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;s.loc['index']&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;s.loc[&apos;index&apos;]&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;Return elements correspondingthe index&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
@@ -1666,8 +1666,8 @@ You can insert directly the records into the table;&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;where the values of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(Val1, Val2, ...)&lt;/code&gt; are inserted in the  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(Col1, Col2, ...)&lt;/code&gt;. If you are adding to all the columns, drop the name of table.&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;INSERT INTO employees VALUES(1752,'ALex','Nickson');
-INSERT INTO employees(id,name,family) VALUES(1752,'ALex','Nickson');
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;INSERT INTO employees VALUES(1752,&apos;ALex&apos;,&apos;Nickson&apos;);
+INSERT INTO employees(id,name,family) VALUES(1752,&apos;ALex&apos;,&apos;Nickson&apos;);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The records can be inserted from other table:&lt;/p&gt;
@@ -1676,7 +1676,7 @@ INSERT INTO  employees_b SELECT name, family FROM employees;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The following simple code shows how to modify an existing record:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;UPDATE employees SET id=7152 WHERE name='ALex';
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;UPDATE employees SET id=7152 WHERE name=&apos;ALex&apos;;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;So the general format of  update is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UPDATE TB SET Col1=Val1, Col1=Val1,...,  WHERE condition&lt;/code&gt;.&lt;/p&gt;
 
@@ -1727,12 +1727,12 @@ DROP TABLE employees_b;
 &lt;p&gt;By using  Logical &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AND&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OR&lt;/code&gt; can add more criteria,&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT * FROM expenses WHERE id=5766 AND travel_expense &amp;lt; 2000;
 SELECT * FROM expenses WHERE id=5766 OR id=1167;
-SELECT * FROM employees WHERE family IN ('Amiri', 'Alimehr');
+SELECT * FROM employees WHERE family IN (&apos;Amiri&apos;, &apos;Alimehr&apos;);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Filtering can be done using particular criteria, apply the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LIKE&lt;/code&gt; clause. The following query selects records in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;family&lt;/code&gt; where they  start with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT * FROM employees WHERE family LIKE 'A%';
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT * FROM employees WHERE family LIKE &apos;A%&apos;;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Different combination of them can also be used; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;%A&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;%A%&lt;/code&gt;.&lt;/p&gt;
 
@@ -1769,13 +1769,13 @@ SELECT travel_expense, round(4*(travel_expense-100)/8,2) FROM expenses WHERE id 
 &lt;h2 id=&quot;combining-variables&quot;&gt;Combining variables&lt;/h2&gt;
 &lt;p&gt;One can combine variables using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;||&lt;/code&gt;,&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT name || family FROM employees;
-SELECT name || ' ' || family FROM employees;
-SELECT family || ', ' || name FROM employees;
+SELECT name || &apos; &apos; || family FROM employees;
+SELECT family || &apos;, &apos; || name FROM employees;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;If you want to combine the output of two queries use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UNION&lt;/code&gt; clause between them.&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT * FROM employees WHERE name='Saeid' UNION SELECT * FROM employees WHERE name='Leila';
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT * FROM employees WHERE name=&apos;Saeid&apos; UNION SELECT * FROM employees WHERE name=&apos;Leila&apos;;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The UNION drops the duplicate, and actually run DISTINCT on it as default. If there is not a duplicate in output of two query, use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UNION ALL&lt;/code&gt; which is faster than UNION.&lt;/p&gt;
@@ -1880,7 +1880,7 @@ SELECT * from expenses;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;To see the output as temporary file out of terminal, type&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.output '|open -f'
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.output &apos;|open -f&apos;
 SELECT * from employees;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -2690,7 +2690,7 @@ ls()| dir() | who | list of loaded objects
 rm(x)| del x| clear x | clear object x from memory
 rm(list = ls())| see below|clear all |  clear all objects from memory&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for obj in dir(): 
-    if obj[0] == '_': continue
+    if obj[0] == &apos;_&apos;: continue
     del globals()[obj]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h2 id=&quot;needed-python-library&quot;&gt;Needed Python library&lt;/h2&gt;
@@ -3079,7 +3079,7 @@ This &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SHC()&lt
 
 &lt;h2 id=&quot;source&quot;&gt;Source&lt;/h2&gt;
 &lt;p&gt;The source of codes are available in GitHub and using the following code can be uploaded in R&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; source('https://raw.githubusercontent.com/saeidamiri1/GHC/master/SHC.R')
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; source(&apos;https://raw.githubusercontent.com/saeidamiri1/GHC/master/SHC.R&apos;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Also load the following libraries to run the computations in parallely,&lt;/p&gt;
@@ -3091,7 +3091,7 @@ This &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SHC()&lt
 &lt;h2 id=&quot;data-set&quot;&gt;Data set&lt;/h2&gt;
 &lt;p&gt;To describe the codes, we used the spiral data which is a non-convex data, the following script load source, dataset and plot it,&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; source('https://raw.githubusercontent.com/saeidamiri1/GHC/master/SHC.R')
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; source(&apos;https://raw.githubusercontent.com/saeidamiri1/GHC/master/SHC.R&apos;)
 &amp;gt; library(&quot;foreach&quot;)
 &amp;gt; library(&quot;doParallel&quot;)
 

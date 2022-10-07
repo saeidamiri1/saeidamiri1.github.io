@@ -1,0 +1,72 @@
+I"<p><em>Amiri, S., &amp; Modarres, R. (2017). Comparison of tests of contingency tables. Journal of biopharmaceutical statistics, 1-13. Doi: 10.1080/10543406.2016.1269786.</em></p>
+
+<p>The bootstrap tests given in Amiri and Modarres (2017) is implemented in R and explained here.
+The source of codes are stored in Github.</p>
+
+<pre><code class="language-{}">##### Necessary libraries in R
+&gt; library(RCurl)
+&gt; library(MASS)
+&gt; library(boot)
+### Read codes from github
+&gt; script &lt;- getURL("https://raw.githubusercontent.com/saeidamiri1/saeidamiri1.github.io/master/codes/bootcat/bootcat.R", ssl.verifypeer = FALSE)
+&gt; eval(parse(text = script))
+########
+
+
+###########################################
+###### Example used in paper
+## enter data in a matrix
+&gt; m&lt;-matrix(c(7,2,5,10,0,1),nrow=2)
+
+&gt; chisq.test(m)$p.value
+[1] 0.06676657
+Warning message:
+In chisq.test(m) : Chi-squared approximation may be incorrect
+
+&gt; fisher.test(m)
+Fisher's Exact Test for Count Data
+data: m
+p-value = 0.06219
+alternative hypothesis: two.sided
+
+################
+##Bootsrap test
+&gt; B&lt;-2000
+&gt; I&lt;-dim(m)[1]
+&gt; J&lt;-dim(m)[2]
+
+
+&gt; BX(m,B)
+[1] 0.044
+There were 50 or more warnings (use warnings() to see the first 50)
+
+
+&gt; BP(m,B)
+[1] 0.032
+There were 50 or more warnings (use warnings() to see the first 50)
+
+
+###########################################
+###########################################
+########################################### 
+&gt; chisq.test(m)$p.value
+[1] 0.815404
+
+
+&gt; fisher.test(m)
+Fisher's Exact Test for Count Data
+
+data: m
+p-value = 0.8175
+alternative hypothesis: two.sided
+
+&gt; BX(m,B)
+[1] 0.8335
+There were 50 or more warnings (use warnings() to see the first 50)
+
+&gt; BP(m,B)
+[1] 0.8285
+There were 50 or more warnings (use warnings() to see the first 50)
+</code></pre>
+
+:ET
