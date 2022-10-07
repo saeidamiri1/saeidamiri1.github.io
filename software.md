@@ -12,13 +12,20 @@ I am committed to develop and validate them. Any feedback is really appreciated,
 
 <ul>
 <h2>  
+  <a href="https://github.com/neurobioinfo/seganalysis "> seganalysis
+  </a>
+</h2>
+<p>
+seganalysis: A pipeline for segregation analysis
+</p>
+
+<h2>  
   <a href="https://neurobioinfo.github.io/MTSvieweR "> MTSviewer
   </a>
 </h2>
 <p>
 MTSviewer: a database to visualize mitochondrial targeting sequences, cleavage sites, and mutations on protein structures.
 </p>
-
 
 
 <h2>  
