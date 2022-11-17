@@ -30,7 +30,6 @@ Amiri, S. (2021). Dissimilarity of time series using Discretized time series glo
 <p>
 Amiri, S., Goulet, JA.,  Morency, C., and Saunier, N. (2020). Modeling Transportation Time Series using Bayesian Dynamic Linear Model.
 </p>
-
 <p>
 Amiri, S., Hassani, H., Heravi, S. (2020). Ranked Set Sampling with Probability Proportional to Size with Application to Economic Data. 
 </p>
@@ -38,17 +37,22 @@ Amiri, S., Hassani, H., Heravi, S. (2020). Ranked Set Sampling with Probability 
 
 ## Published
 <ul>
- <p>
- Goulet JA, Nguyen LH, Amiri S. (2021). Tractable Approximate Gaussian Inference for Bayesian Neural Networks.  <em>  Journal of Machine Learning Research, 20-1009, In press.  </em>  (<a href="https://arxiv.org/pdf/2004.09281.pdf"> pdf</a>)
+<p>
+Deka, B., Ha Nguyen, L., Amiri, S and Goulet, J-A. (2022).The Gaussian Multiplicative Approximation forState-Space Models. <em> Structural Control and Health Monitoring.  Volume 29, Issue 3, e2904. </em>  (<a href="https://doi.org/10.1002/stc.2904"> pdf</a>)
 </p>
 <p>
-Deka, B., Ha Nguyen, L., Amiri, S and Goulet, J-A. (2022).The Gaussian Multiplicative Approximation forState-Space Models. <em> Structural Control and Health Monitoring.  Volume 29, Issue 3, e2904. </em>  (<a href="https://arxiv.org/pdf/2004.09281.pdf"> pdf</a>)
+ Ahmed SE, Amiri S., Doksum, K. (2021). Ensemble linear subspace analysis of high-dimensional data. Entropy, 23(3), 324.  </em>  (<a href="https://doi.org/10.3390/e23030324"> Journal</a>)
+</p>
+<p>
+ Goulet JA, Nguyen LH, Amiri S. (2021). Tractable Approximate Gaussian Inference for Bayesian Neural Networks.  <em>  Journal of Machine Learning Research, 20-1009, In press.  </em>  (<a href="https://jmlr.org/papers/v22/20-1009.html"> Journal</a>)
 </p>
 <p>
  Amiri, S. (2021). Meta inference of heterogeneous data streams.  <em>  Journal of Biopharmaceutical Statistics, 1-17</em> . (<a href="https://github.com/saeidamiri1/saeidamiri1.github.io/blob/master/public/published/amiri2021meta.pdf"> pdf</a>,<a href="https://www.tandfonline.com/doi/abs/10.1080/10543406.2021.1946692">  Journal</a>, <a href="https://saeidamiri1.github.io/codes/mtmeans/mtmeans"> supplementary</a>)
 </p>
-
- <p>
+<p>
+ Toulouse, C., Amiri, S., Cloutier, M. S., & Saunier, N. (2020). Speed Limit Changes and Driver Behaviour: A Spatial Lag Model.  <em>  Findings, 17408</em> . (<a href="https://findingspress.org/article/17408.pdf">  Journal</a>)
+</p>
+<p>
  Amiri, S., Jozani, M. J., & Modarres, R. (2020). On multiple imputation for unbalanced ranked set samples with applications in quantile estimation.  <em> Brazilian Journal of Probability and Statistics </em>, 34(4), 752-769. (<a href="https://github.com/saeidamiri1/saeidamiri1.github.io/blob/master/public/published/a2019URSSQ.pdf"> pdf</a>,<a href="https://projecteuclid.org/euclid.bjps/1601020817">  Journal</a>)
 </p>
 <p>

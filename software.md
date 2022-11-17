@@ -22,7 +22,7 @@ scrnabox: A pipeline for scrNA Analysis
 
 
 <h2>  
-  <a href="https://github.com/neurobioinfo/segpy"> seganalysis
+  <a href="https://github.com/neurobioinfo/segpy"> segpy
   </a>
 </h2>
 <p>
