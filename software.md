@@ -4,19 +4,29 @@ title: Software
 permalink: software/
 ---
 
-The following supplementaries include the codes that I have been developing and are released to support the open-sciences, see my [GitHub](https://github.com/saeidamiri1) as well.  
+The following supplementaries include the softwares that I have been developing and are released to support the open-sciences, see my [GitHub](https://github.com/saeidamiri1) as well.  
 I am committed to develop and validate them. Any feedback is really appreciated, please report bugs, typos or any comments by sending an email, saeid.amiri1 atsign gmail.com, to me. 
 
 
 
 
 <ul>
+
 <h2>  
-  <a href="https://github.com/neurobioinfo/seganalysis "> seganalysis
+  <a href="https://github.com/neurobioinfo/scrnabox"> scrnabox
   </a>
 </h2>
 <p>
-seganalysis: A pipeline for segregation analysis
+scrnabox: A pipeline for scrNA Analysis 
+</p>
+
+
+<h2>  
+  <a href="https://github.com/neurobioinfo/segpy"> seganalysis
+  </a>
+</h2>
+<p>
+segpy: A pipeline for segregation analysis
 </p>
 
 <h2>  
