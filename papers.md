@@ -16,9 +16,6 @@ permalink: papers/
 ## Submitted
 <ul>
 <p>
-Andrew N. Bayne, Jing Dong, Saeid Amiri, Sali M.K. Farhan, Jean-Francois Trempe. MTSviewer: a database to visualize mitochondrial targeting sequences, cleavage sites, and mutations on protein structures  bioRxiv (<a href="https://www.biorxiv.org/content/10.1101/2021.11.25.470064v1"> pdf </a>, <a href=" https://neurobioinfo.github.io/MTSvieweR"> supplementary</a>)
-</p>
-<p>
 Amiri, S., Modarres, R. (2021). How Aggregating improves the Classification’s accuracy. (<a href="https://github.com/saeidamiri1/sagg/blob/master/README.md"> supplementary</a>)
 </p>
 <p>
@@ -27,18 +24,23 @@ Amiri, S. (2021). ESRL: Ensemble SVD-regularized learning to achieve clustering.
 <p>
 Amiri, S. (2021). Dissimilarity of time series using Discretized time series global Alignment; with application of transportation data.  (<a href="https://github.com/saeidamiri1/DTGA#readme"> supplementary</a>)
 </p>
-<p>
-Amiri, S., Goulet, JA.,  Morency, C., and Saunier, N. (2020). Modeling Transportation Time Series using Bayesian Dynamic Linear Model.
-</p>
-<p>
-Amiri, S., Hassani, H., Heravi, S. (2020). Ranked Set Sampling with Probability Proportional to Size with Application to Economic Data. 
-</p>
 </ul>
 
 ## Published
 <ul>
 <p>
-Deka, B., Ha Nguyen, L., Amiri, S and Goulet, J-A. (2022).The Gaussian Multiplicative Approximation forState-Space Models. <em> Structural Control and Health Monitoring.  Volume 29, Issue 3, e2904. </em>  (<a href="https://doi.org/10.1002/stc.2904"> pdf</a>)
+Andrew N. Bayne, Jing Dong, Saeid Amiri, Sali M.K. Farhan, Jean-Francois Trempe (2023). MTSviewer: A database to visualize mitochondrial targeting sequences, cleavage sites, and mutations on protein structures. <em> PLoS One. doi: 10.1371/journal.pone.0284541. PMID: 37093842; PMCID: PMC10124841.</em> (<a href="https://github.com/saeidamiri1/saeidamiri1.github.io/blob/master/public/published/2023mtsvier.pdf"> pdf</a>,<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0284541">  Journal</a>, <a href="https://neurobioinfo.github.io/MTSvieweR"> supplementary</a>)
+</p>
+<p>
+Amiri, S., Goulet, JA.,  Tremanier, M., and Saunier, N. (2023). Modeling Transportation Time Series using Bayesian Dynamic Linear Model. WCTR, 17-21 (<a href="https://github.com/saeidamiri1/saeidamiri1.github.io/blob/master/public/published/amiri2023wctr.pdf"> pdf</a>, <a href="https://github.com/saeidamiri1/CKR"> supplementary</a>)
+</p>
+
+<p>
+Amiri, S., Hassani, H., Heravi, S. (2023). Ranked Set Sampling with Probability Proportional to Size with Application to Economic Data. To appear in  Austrian Journal of Statistics.
+(<a href="https://github.com/saeidamiri1/saeidamiri1.github.io/blob/master/public/published/a2023RPPS.pdf"> pdf</a>,<a href="https://www.ajs.or.at/index.php/ajs">  Journal</a>, <a href="https://saeidamiri1.github.io/codes/RPPS"> supplementary</a>)
+</p>
+<p>
+Deka, B., Ha Nguyen, L., Amiri, S and Goulet, J-A. (2022).The Gaussian Multiplicative Approximation forState-Space Models. <em> Structural Control and Health Monitoring.  Volume 29, Issue 3, e2904. </em>  (<a href="https://doi.org/10.1002/stc.2904"> Journal</a>, <a href="https://github.com/saeidamiri1/saeidamiri1.github.io/blob/master/public/published/Deka2022.pdf"> pdf</a>)
 </p>
 <p>
  Goulet JA, Nguyen LH, Amiri S. (2021). Tractable Approximate Gaussian Inference for Bayesian Neural Networks.  <em>  Journal of Machine Learning Research, 20-1009, In press.  </em>  (<a href="https://jmlr.org/papers/v22/20-1009.html"> Journal</a>)
