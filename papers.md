@@ -13,19 +13,6 @@ permalink: papers/
 <a href="https://github.com/saeidamiri1">  GitHub</a>
 
 
-## Submitted
-<ul>
-<p>
-Amiri, S., Modarres, R. (2021). How Aggregating improves the Classification’s accuracy. (<a href="https://github.com/saeidamiri1/sagg/blob/master/README.md"> supplementary</a>)
-</p>
-<p>
-Amiri, S. (2021). ESRL: Ensemble SVD-regularized learning to achieve clustering.
-</p>
-<p>
-Amiri, S. (2021). Dissimilarity of time series using Discretized time series global Alignment; with application of transportation data.  (<a href="https://github.com/saeidamiri1/DTGA#readme"> supplementary</a>)
-</p>
-</ul>
-
 ## Published
 <ul>
 <p>

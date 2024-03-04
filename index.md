@@ -2,11 +2,15 @@
 layout: page
 ---
 
-Hello! You have reached the personal webpage of Saeid Amiri; this website is my personal space where I put my ongoing researches and academic activities.
+Greetings! Welcome to the personal webpage of Saeid Amiri. Here, you'll find a collection of my ongoing research and academic endeavors, providing insight into my professional journey.
 
-My skill lies at the intersection of machine learning, statistics, predictive models, and computational statistics. In particular, I am interested in the high-dimensional data and Big data and interested to develop the statistical learning (clustering and classification methods) for the big data. As a dedicated supporter of open-science and supporter of the recent trend in developing the computational techniques, e.g., Github, among many others, I have been developing a few libraries in R and Python from my researches, and they are released and maintained in this website. 
+My skill lies at the intersection of machine learning, statistics, predictive models, and computational statistics. In particular, I am interested in the high-dimensional data and Big data and interested to develop the statistical learning (clustering and classification methods) for the big data. As a dedicated supporter of open-science and supporter of the recent trend in developing the computational techniques, e.g., Github, among many others, I have been developing a few libraries in R and Python from my researches, and they are released and maintained in this website.
 
-I am interested in Machine learning, computational statistics, Bioinformatics, developing algorithms, and working on interesting projects in academia\industry. I do [research](https://saeidamiri1.github.io/papers/), and develop data analysis [software](https://saeidamiri1.github.io/software/).
+
+I specialize in the machine learning, statistics, predictive modeling, and computational statistics. My focus revolves around high-dimensional and Big Data, with a keen interest in advancing statistical learning, particularly in the realms of clustering and classification methods for large datasets. Embracing the principles of open science and staying aligned with the current wave of computational techniques, such as on platforms like GitHub, I have actively contributed to the development of several libraries in R and Python based on my research. These libraries are accessible and continually maintained through this websit
+
+
+My interests span across Machine learning, computational statistics, Bioinformatics, developing algorithms, and working on interesting projects in academia\industry. I do [research](https://saeidamiri1.github.io/papers/), and develop data analysis [software](https://saeidamiri1.github.io/software/).
 
 If you are interested in collaborating and doing some great work, please reach out to me via:
 
