@@ -2,7 +2,7 @@
 layout: page
 ---
 
-Greetings! Welcome to the personal webpage of Saeid Amiri. Passionate data scientist with a background in statistics, dedicated to helping others turn diverse data into useful information
+Greetings! Welcome to the personal webpage of Saeid Amiri, a passionate data scientist with a background in statistics, dedicated to transforming diverse data into valuable insights.
 
 My interests span across AI, computational statistics, developing algorithms, and working on interesting projects in academia\industry. I do [research](https://saeidamiri1.github.io/papers/), and develop data analysis [software](https://saeidamiri1.github.io/software/).
 
