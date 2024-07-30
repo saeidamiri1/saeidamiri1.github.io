@@ -9,14 +9,12 @@ Interests
 <p>
 Data Analysis<br>
 Computational Statistics<br>
-Statistical Machine Learning<br>
+AI<br>
 Predictive models <br>
-High dimensional data <br>
 Statistical inference </p>
 
 <h3>
 Current position
 </h3>
-Data scientist at The Neuro (Montreal Neurological Institute-Hospital) <br>
+Data scientist at MNI <br>
 McGill University <br>
-1033 Pine Avenue West <br>

@@ -2,12 +2,9 @@
 layout: page
 ---
 
-Greetings! Welcome to the personal webpage of Saeid Amiri. Here, you'll find a collection of my ongoing research and academic endeavors, providing insight into my professional journey.
+Greetings! Welcome to the personal webpage of Saeid Amiri. Passionate data scientist with a background in statistics, dedicated to helping others turn diverse data into useful information
 
-I specialize in the machine learning, statistics, predictive modeling, and computational statistics. My focus revolves around high-dimensional and Big Data, with a keen interest in advancing statistical learning, particularly in the realms of clustering and classification methods for large datasets. Embracing the principles of open science and staying aligned with the current wave of computational techniques, such as on platforms like GitHub, I have actively contributed to the development of several libraries in R and Python based on my research. These libraries are accessible and continually maintained through this websit. 
-
-
-My interests span across Machine learning, computational statistics, Bioinformatics, developing algorithms, and working on interesting projects in academia\industry. I do [research](https://saeidamiri1.github.io/papers/), and develop data analysis [software](https://saeidamiri1.github.io/software/).
+My interests span across AI, computational statistics, developing algorithms, and working on interesting projects in academia\industry. I do [research](https://saeidamiri1.github.io/papers/), and develop data analysis [software](https://saeidamiri1.github.io/software/).
 
 If you are interested in collaborating and doing some great work, please reach out to me via:
 
