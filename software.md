@@ -20,6 +20,13 @@ I am committed to develop and validate them. Any feedback is really appreciated,
 scrnabox: A pipeline for scrNA Analysis 
 </p>
 
+<h2>  
+  <a href="https://github.com/neurobioinfo/ensemblex"> ensemblex
+  </a>
+</h2>
+<p>
+Ensemblex: an accuracy-weighted ensemble genetic demultiplexing framework for single-cell RNA sequencing
+</p>
 
 <h2>  
   <a href="https://github.com/neurobioinfo/segpy"> segpy
